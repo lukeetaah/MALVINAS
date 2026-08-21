@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "malvinas-1982-master-daily-v0.1",
+  "title": {
+    "es-AR": "Cronología maestra de la Guerra de Malvinas",
+    "en-GB": "Master chronology of the Falklands War"
+  },
+  "period": {
+    "start": "1982-04-02",
+    "end": "1982-06-14",
+    "calendar": "gregorian",
+    "localTimeZone": "Atlantic/Stanley"
+  },
+  "editorialPolicy": [
+    "The historical outcome is immutable and must never be overwritten by a player result.",
+    "An event is not promoted to a mission without unit, location and source review.",
+    "Institutional narratives are attributed to their source; the game does not speak with a sovereignty verdict.",
+    "Contested claims remain visible as contested and are not silently resolved by the simulation.",
+    "The daily index is complete for the date range; detailed event coverage is intentionally incremental."
+  ],
+  "dailyIndex": [
+    {"date":"1982-04-02","eventIds":["op-rosario","faa-air-bridge"],"coverage":"verified-2-sources"},
+    {"date":"1982-04-03","eventIds":["south-georgia"],"coverage":"verified-2-sources"},
+    {"date":"1982-04-04","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-05","eventIds":["british-task-force"],"coverage":"verified-2-sources"},
+    {"date":"1982-04-06","eventIds":["british-task-force"],"coverage":"verified-2-sources"},
+    {"date":"1982-04-07","eventIds":["british-task-force"],"coverage":"verified-2-sources"},
+    {"date":"1982-04-08","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-09","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-10","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-11","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-12","eventIds":["faa-force-south","bam-condor"],"coverage":"verified-primary-led"},
+    {"date":"1982-04-13","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-14","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-15","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-16","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-17","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-18","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-19","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-20","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-21","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-22","eventIds":["south-georgia-recovery"],"coverage":"verified-primary-led"},
+    {"date":"1982-04-23","eventIds":["south-georgia-recovery"],"coverage":"verified-primary-led"},
+    {"date":"1982-04-24","eventIds":["south-georgia-recovery"],"coverage":"verified-primary-led"},
+    {"date":"1982-04-25","eventIds":["south-georgia-recovery"],"coverage":"verified-2-sources"},
+    {"date":"1982-04-26","eventIds":["south-georgia-recovery"],"coverage":"verified-2-sources"},
+    {"date":"1982-04-27","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-28","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-29","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-04-30","eventIds":["exclusion-zone"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-01","eventIds":["first-air-actions"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-02","eventIds":["belgrano"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-03","eventIds":["alferez-sobral"],"coverage":"verified-primary-led"},
+    {"date":"1982-05-04","eventIds":["sheffield"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-05","eventIds":["alferez-sobral"],"coverage":"verified-primary-led"},
+    {"date":"1982-05-06","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-07","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-08","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-09","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-10","eventIds":["isla-de-los-estados"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-11","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-12","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-13","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-14","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-15","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-16","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-17","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-18","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-19","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-20","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-21","eventIds":["san-carlos"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-22","eventIds":["san-carlos"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-23","eventIds":["antelope"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-24","eventIds":["antelope"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-25","eventIds":["coventry","atlantic-conveyor"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-26","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-05-27","eventIds":["goose-green"],"coverage":"verified-primary-led"},
+    {"date":"1982-05-28","eventIds":["goose-green"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-29","eventIds":["goose-green"],"coverage":"verified-2-sources"},
+    {"date":"1982-05-30","eventIds":["invincible-claim"],"coverage":"contested"},
+    {"date":"1982-05-31","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-06-01","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-06-02","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-06-03","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-06-04","eventIds":[],"coverage":"index-only"},
+    {"date":"1982-06-05","eventIds":["land-advance"],"coverage":"verified-primary-led"},
+    {"date":"1982-06-06","eventIds":["land-advance"],"coverage":"verified-primary-led"},
+    {"date":"1982-06-07","eventIds":["land-advance"],"coverage":"verified-primary-led"},
+    {"date":"1982-06-08","eventIds":["bluff-cove"],"coverage":"verified-2-sources"},
+    {"date":"1982-06-09","eventIds":["land-advance"],"coverage":"verified-primary-led"},
+    {"date":"1982-06-10","eventIds":["land-advance"],"coverage":"verified-primary-led"},
+    {"date":"1982-06-11","eventIds":["longdon-dos-hermanas-harriet"],"coverage":"verified-2-sources"},
+    {"date":"1982-06-12","eventIds":["longdon-dos-hermanas-harriet","glamorgan","tumbledown"],"coverage":"verified-2-sources"},
+    {"date":"1982-06-13","eventIds":["wireless-ridge","tumbledown"],"coverage":"verified-2-sources"},
+    {"date":"1982-06-14","eventIds":["surrender"],"coverage":"verified-2-sources"}
+  ],
+  "events": [
+    {
+      "id": "op-rosario",
+      "dateStart": "1982-04-02",
+      "dateEnd": "1982-04-02",
+      "category": "land-and-amphibious",
+      "locations": ["Puerto Argentino/Stanley", "Moody Brook", "Government House"],
+      "units": ["Argentine amphibious and special operations forces", "Royal Marine detachment NP8901"],
+      "summary": {
+        "es-AR": "Fuerzas argentinas toman el control de las instalaciones principales de Puerto Argentino y el destacamento de Royal Marines se rinde.",
+        "en-GB": "Argentine forces take control of the main installations at Port Stanley and the Royal Marine detachment surrenders."
+      },
+      "historicalOutcome": "Argentine control of the Falkland Islands is established.",
+      "sources": ["FALKLANDS-NATIONAL-ARCHIVES-1982", "RN-MUSEUMS-APRIL", "HASTINGS-JENKINS", "MIDDLEBROOK"],
+      "verification": {"status":"verified-2-sources","notes":"Exact order of sub-actions and unit-level order of battle still requires archival review."}
+    },
+    {
+      "id": "faa-air-bridge",
+      "dateStart": "1982-04-02",
+      "dateEnd": "1982-04-02",
+      "category": "air-and-logistics",
+      "locations": ["Aeródromo Malvinas / Puerto Argentino"],
+      "units": ["C-130 Hercules TC-68", "Grupo Operaciones Especiales", "Equipo de Control de Combate", "IA-58 Pucará"],
+      "summary": {
+        "es-AR": "Un C-130 aterriza en el aeródromo y los primeros IA-58 Pucará llegan a las islas durante la operación de asalto y sostenimiento.",
+        "en-GB": "A C-130 lands at the airfield and the first IA-58 Pucará aircraft arrive during the assault and sustainment operation."
+      },
+      "historicalOutcome": "The airfield becomes the initial Argentine air and logistics link with the mainland.",
+      "sources": ["ARG-FAA-ARIES", "ARG-FAA-TIMELINE", "ARG-FAA-ARCHIVE"],
+      "verification": {"status":"verified-2-sources","notes":"Aircraft serials are preserved from the FAA account; mission gameplay should use role and silhouette, not photographic reproduction."}
+    },
+    {
+      "id": "south-georgia",
+      "dateStart": "1982-04-03",
+      "dateEnd": "1982-04-03",
+      "category": "land-and-amphibious",
+      "locations": ["Grytviken", "South Georgia"],
+      "units": ["Argentine naval forces", "Royal Marines detachment from HMS Endurance", "NP8901 reinforcement"],
+      "summary": {
+        "es-AR": "Fuerzas argentinas ocupan Grytviken después de la resistencia del pequeño destacamento de Royal Marines.",
+        "en-GB": "Argentine forces occupy Grytviken after resistance by the small Royal Marine detachment."
+      },
+      "historicalOutcome": "South Georgia is under Argentine control until the British operation later in April.",
+      "sources": ["FALKLANDS-NATIONAL-ARCHIVES-1982", "RN-MUSEUMS-APRIL", "MIDDLEBROOK"],
+      "verification": {"status":"verified-2-sources","notes":"This is a separate island operation and should not be conflated with the East Falkland campaign map."}
+    },
+    {
+      "id": "british-task-force",
+      "dateStart": "1982-04-05",
+      "dateEnd": "1982-04-07",
+      "category": "naval-and-logistics",
+      "locations": ["United Kingdom", "South Atlantic"],
+      "units": ["HMS Hermes", "HMS Invincible", "HMS Fearless", "HMS Intrepid", "3 Commando Brigade", "SS Canberra", "HMS Conqueror"],
+      "summary": {
+        "es-AR": "El Reino Unido reúne y hace zarpar una fuerza de tareas para recuperar las islas, con el componente de portaaviones, anfibio y submarino ya en movimiento.",
+        "en-GB": "The United Kingdom assembles and sails a task force to retake the islands, including carrier, amphibious and submarine elements."
+      },
+      "historicalOutcome": "Operation Corporate begins as a long-distance naval and logistical campaign.",
+      "sources": ["RN-MUSEUMS-APRIL", "OSPREY-GROUND", "HASTINGS-JENKINS"],
+      "verification": {"status":"verified-2-sources","notes":"The event is strategic context rather than a single tactical mission."}
+    },
+    {
+      "id": "faa-force-south",
+      "dateStart": "1982-04-05",
+      "dateEnd": "1982-04-05",
+      "category": "command-and-logistics",
+      "locations": ["Argentina", "South Atlantic Theatre"],
+      "units": ["Fuerza Aérea Sur"],
+      "summary": {
+        "es-AR": "La Fuerza Aérea Argentina crea la Fuerza Aérea Sur para organizar sus operaciones en el teatro del Atlántico Sur.",
+        "en-GB": "The Argentine Air Force creates Fuerza Aérea Sur to organise its operations in the South Atlantic theatre."
+      },
+      "historicalOutcome": "Air operations are placed under a dedicated theatre command.",
+      "sources": ["ARG-FAA-TIMELINE", "ARG-FAA-ARCHIVE"],
+      "verification": {"status":"verified-primary-led","notes":"Command relationships and subordinate units require a dedicated order-of-battle pass."}
+    },
+    {
+      "id": "bam-condor",
+      "dateStart": "1982-04-12",
+      "dateEnd": "1982-04-12",
+      "category": "air-and-logistics",
+      "locations": ["Darwin / Pradera del Ganso"],
+      "units": ["Base Aérea Militar Cóndor"],
+      "summary": {
+        "es-AR": "Se crea la Base Aérea Militar Cóndor como parte del despliegue aéreo argentino en las islas.",
+        "en-GB": "BAM Cóndor is established as part of the Argentine air deployment on the islands."
+      },
+      "historicalOutcome": "Darwin and Goose Green become an important Argentine aviation and logistics node.",
+      "sources": ["ARG-FAA-TIMELINE", "ARG-FAA-ARCHIVE"],
+      "verification": {"status":"verified-primary-led","notes":"The exact initial establishment layout is pending terrain and archival mapping."}
+    },
+    {
+      "id": "south-georgia-recovery",
+      "dateStart": "1982-04-22",
+      "dateEnd": "1982-04-26",
+      "category": "land-and-amphibious",
+      "locations": ["Fortuna Glacier", "Grytviken", "South Georgia"],
+      "units": ["British special forces and Royal Marines", "RFA Tidespring", "Argentine submarine ARA Santa Fe"],
+      "summary": {
+        "es-AR": "La operación británica sobre South Georgia culmina con la recuperación de Grytviken; el ARA Santa Fe queda fuera de combate.",
+        "en-GB": "The British operation on South Georgia culminates in the recapture of Grytviken; ARA Santa Fe is put out of action."
+      },
+      "historicalOutcome": "South Georgia is recovered by British forces on 26 April.",
+      "sources": ["FALKLANDS-NATIONAL-ARCHIVES-1982", "RN-MUSEUMS-APRIL", "RN-MUSEUMS-OVERVIEW"],
+      "verification": {"status":"verified-2-sources","notes":"The exact sequence of helicopter losses, submarine damage and surrender terms requires mission-level archival treatment."}
+    },
+    {
+      "id": "exclusion-zone",
+      "dateStart": "1982-04-30",
+      "dateEnd": "1982-04-30",
+      "category": "rules-of-engagement",
+      "locations": ["South Atlantic maritime theatre"],
+      "units": ["British Task Force"],
+      "summary": {
+        "es-AR": "El Reino Unido define una zona de exclusión marítima total de 200 millas alrededor de las islas.",
+        "en-GB": "The United Kingdom defines a 200-mile maritime total exclusion zone around the islands."
+      },
+      "historicalOutcome": "The zone becomes part of the operational and diplomatic context of the naval war.",
+      "sources": ["RN-MUSEUMS-OVERVIEW", "HASTINGS-JENKINS"],
+      "verification": {"status":"verified-2-sources","notes":"The event must be represented as a rule-of-engagement context, not as a claim that every action occurred inside the zone."}
+    },
+    {
+      "id": "first-air-actions",
+      "dateStart": "1982-05-01",
+      "dateEnd": "1982-05-01",
+      "category": "air-and-naval",
+      "locations": ["Puerto Argentino", "Darwin", "Falkland Sound"],
+      "units": ["RAF Vulcan", "Sea Harrier", "Argentine Air Force", "Argentine naval aviation", "Argentine air-defence units"],
+      "summary": {
+        "es-AR": "Comienzan los bombardeos británicos sobre aeródromos y posiciones argentinas; la Fuerza Aérea Argentina entra en combate y se inicia la fase abierta de la guerra aérea y naval.",
+        "en-GB": "British strikes begin against airfields and Argentine positions; the Argentine Air Force enters combat and the open air and naval phase begins."
+      },
+      "historicalOutcome": "The air war becomes an ongoing contest over access to the islands and the fleet.",
+      "sources": ["ARG-FAA-TIMELINE", "ARG-ARMY-DEFENCE", "RN-MUSEUMS-OVERVIEW"],
+      "verification": {"status":"verified-2-sources","notes":"Aircraft-loss and sortie counts are intentionally excluded until reconciled against the FAA archive and British operational records."}
+    },
+    {
+      "id": "belgrano",
+      "dateStart": "1982-05-02",
+      "dateEnd": "1982-05-02",
+      "category": "naval",
+      "locations": ["South Atlantic, south of the exclusion zone"],
+      "units": ["ARA General Belgrano", "ARA Bouchard", "ARA Piedra Buena", "HMS Conqueror"],
+      "summary": {
+        "es-AR": "El submarino HMS Conqueror torpedea y hunde al crucero ARA General Belgrano; 323 tripulantes mueren y 770 sobreviven al hundimiento.",
+        "en-GB": "HMS Conqueror torpedoes and sinks the cruiser ARA General Belgrano; 323 crew members die and 770 survive the sinking."
+      },
+      "historicalOutcome": "The loss of the Belgrano becomes a central naval and political turning point in the conflict.",
+      "casualties": {"argentinaKilled":323,"sourceBasis":"ARG-ARMADA-MAY"},
+      "sources": ["ARG-ARMADA-MAY", "ARG-ARMY-DEFENCE", "RN-MUSEUMS-OVERVIEW", "MIDDLEBROOK"],
+      "verification": {"status":"verified-2-sources","notes":"The location outside the British exclusion zone and the legal/operational interpretation must remain attributed to sources rather than narrated as a game verdict."}
+    },
+    {
+      "id": "alferez-sobral",
+      "dateStart": "1982-05-03",
+      "dateEnd": "1982-05-05",
+      "category": "naval-and-search-rescue",
+      "locations": ["South Atlantic"],
+      "units": ["ARA Alférez Sobral", "Argentine search-and-rescue units"],
+      "summary": {
+        "es-AR": "El aviso ARA Alférez Sobral es atacado y las operaciones de búsqueda y rescate de sus tripulantes continúan durante los días siguientes.",
+        "en-GB": "The aviso ARA Alférez Sobral is attacked and search-and-rescue operations for its crew continue over the following days."
+      },
+      "historicalOutcome": "The damaged vessel reaches the Argentine mainland after rescue operations.",
+      "sources": ["ARG-ARMADA-MILESTONES", "ARG-ARMADA-MAY"],
+      "verification": {"status":"verified-primary-led","notes":"The event is included in the master index; vessel damage and casualty details need a second archival pass."}
+    },
+    {
+      "id": "sheffield",
+      "dateStart": "1982-05-04",
+      "dateEnd": "1982-05-10",
+      "category": "air-and-naval",
+      "locations": ["South Atlantic, west of the Falklands"],
+      "units": ["Super Étendard aircraft", "Neptune maritime patrol aircraft", "HMS Sheffield", "KC-130 tanker"],
+      "summary": {
+        "es-AR": "Dos Super Étendard, guiados por la exploración del Neptune y reabastecidos por un KC-130, atacan al HMS Sheffield con misiles Exocet; el buque se hunde días después.",
+        "en-GB": "Two Super Étendards, supported by Neptune reconnaissance and a KC-130 tanker, attack HMS Sheffield with Exocet missiles; the ship sinks days later."
+      },
+      "historicalOutcome": "HMS Sheffield is lost after the missile attack and subsequent fire.",
+      "sources": ["ARG-ARMADA-MAY", "ARG-ARMY-DEFENCE", "RN-MUSEUMS-OVERVIEW"],
+      "verification": {"status":"verified-2-sources","notes":"Exact missile impact and sinking sequence should be represented with source attribution in the archive entry."}
+    },
+    {
+      "id": "isla-de-los-estados",
+      "dateStart": "1982-05-10",
+      "dateEnd": "1982-05-10",
+      "category": "naval",
+      "locations": ["Falkland Sound"],
+      "units": ["ARA Isla de los Estados", "British naval forces"],
+      "summary": {
+        "es-AR": "El transporte ARA Isla de los Estados es atacado y hundido en el canal de San Carlos.",
+        "en-GB": "The transport ARA Isla de los Estados is attacked and sunk in Falkland Sound."
+      },
+      "historicalOutcome": "The transport is lost during the approach to the landing area.",
+      "sources": ["ARG-ARMADA-MAY", "ARG-ARMADA-MILESTONES"],
+      "verification": {"status":"verified-2-sources","notes":"Crew and cargo details remain outside this first pass."}
+    },
+    {
+      "id": "san-carlos",
+      "dateStart": "1982-05-21",
+      "dateEnd": "1982-05-25",
+      "category": "amphibious-and-air",
+      "locations": ["San Carlos Water", "Falkland Sound"],
+      "units": ["3 Commando Brigade", "HMS Fearless", "HMS Intrepid", "HMS Ardent", "HMS Antelope", "Argentine Air Force"],
+      "summary": {
+        "es-AR": "La fuerza anfibia británica desembarca en San Carlos; los ataques aéreos argentinos convierten el estrecho y la bahía en el principal foco naval de la campaña.",
+        "en-GB": "The British amphibious force lands at San Carlos; Argentine air attacks turn the sound and bay into the campaign's main naval focus."
+      },
+      "historicalOutcome": "A British bridgehead is established on East Falkland and the land campaign begins.",
+      "sources": ["FALKLANDS-NATIONAL-ARCHIVES-1982", "RN-SAN-CARLOS", "OSPREY-GROUND", "HASTINGS-JENKINS"],
+      "verification": {"status":"verified-2-sources","notes":"The event is a campaign milestone; separate missions should handle the individual ship attacks."}
+    },
+    {
+      "id": "antelope",
+      "dateStart": "1982-05-23",
+      "dateEnd": "1982-05-24",
+      "category": "air-and-naval",
+      "locations": ["San Carlos Water"],
+      "units": ["HMS Antelope", "Argentine strike aircraft", "British bomb disposal team"],
+      "summary": {
+        "es-AR": "El HMS Antelope resulta alcanzado durante los ataques aéreos; una bomba sin explotar detona durante el intento de desactivación y el buque se parte y se hunde.",
+        "en-GB": "HMS Antelope is hit during air attacks; an unexploded bomb detonates during an attempt to disarm it and the ship breaks apart and sinks."
+      },
+      "historicalOutcome": "HMS Antelope is lost in San Carlos Water.",
+      "sources": ["RN-SAN-CARLOS", "RN-MUSEUMS-OVERVIEW", "ARG-ARMADA-MILESTONES"],
+      "verification": {"status":"verified-2-sources","notes":"The ship-loss sequence is suitable for an archive entry; it should not be gamified as a guaranteed event."}
+    },
+    {
+      "id": "coventry",
+      "dateStart": "1982-05-25",
+      "dateEnd": "1982-05-25",
+      "category": "air-and-naval",
+      "locations": ["Falkland Sound"],
+      "units": ["HMS Coventry", "HMS Broadsword", "Argentine A-4B Skyhawk"],
+      "summary": {
+        "es-AR": "Una sección de A-4B ataca al HMS Coventry, que navega junto al HMS Broadsword, y el destructor británico se hunde.",
+        "en-GB": "A section of A-4B aircraft attacks HMS Coventry, sailing with HMS Broadsword, and the British destroyer is sunk."
+      },
+      "historicalOutcome": "HMS Coventry is lost during the air battle around the San Carlos bridgehead.",
+      "sources": ["ARG-ARMADA-MILESTONES", "ARG-FAA-ARCHIVE", "RN-MUSEUMS-OVERVIEW"],
+      "verification": {"status":"verified-2-sources","notes":"The FAA archive collection is the primary Argentine archive catalogue; a document-level record is still needed before mission production."}
+    },
+    {
+      "id": "atlantic-conveyor",
+      "dateStart": "1982-05-25",
+      "dateEnd": "1982-05-25",
+      "category": "air-and-logistics",
+      "locations": ["South Atlantic approaches"],
+      "units": ["Atlantic Conveyor", "Argentine strike aircraft", "British helicopter detachment"],
+      "summary": {
+        "es-AR": "Un ataque argentino daña gravemente al portacontenedores Atlantic Conveyor y se pierden helicópteros y material logístico esenciales para la campaña británica.",
+        "en-GB": "An Argentine attack badly damages the container ship Atlantic Conveyor, destroying helicopters and logistical material vital to the British campaign."
+      },
+      "historicalOutcome": "British troop movement becomes more dependent on ships and marching after the loss of the helicopters.",
+      "sources": ["RN-MUSEUMS-OVERVIEW", "HASTINGS-JENKINS", "OSPREY-GROUND"],
+      "verification": {"status":"verified-2-sources","notes":"Exact inventory of lost equipment will be added from the official history and naval records."}
+    },
+    {
+      "id": "goose-green",
+      "dateStart": "1982-05-27",
+      "dateEnd": "1982-05-29",
+      "category": "land",
+      "locations": ["Darwin", "Goose Green / Pradera del Ganso"],
+      "units": ["2 PARA", "Regimiento de Infantería 12", "BAM Cóndor", "Argentine artillery and air-defence elements"],
+      "summary": {
+        "es-AR": "El 2 PARA británico ataca las posiciones argentinas en Darwin y Pradera del Ganso; tras combates prolongados, las fuerzas argentinas de la guarnición se rinden.",
+        "en-GB": "2 PARA attacks Argentine positions at Darwin and Goose Green; after prolonged fighting, the Argentine garrison surrenders."
+      },
+      "historicalOutcome": "British forces secure Darwin and Goose Green, creating a key step toward Stanley.",
+      "sources": ["OSPREY-GROUND", "MIDDLEBROOK", "ARG-ARMADA-MILESTONES"],
+      "verification": {"status":"verified-2-sources","notes":"This is the recommended first ground mission. Exact initial dispositions, ammunition and weather belong in a separate scenario file."}
+    },
+    {
+      "id": "invincible-claim",
+      "dateStart": "1982-05-30",
+      "dateEnd": "1982-05-30",
+      "category": "air-and-naval",
+      "locations": ["South Atlantic east of the Falklands"],
+      "units": ["Argentine Super Étendard", "Argentine A-4 Skyhawk", "HMS Invincible"],
+      "summary": {
+        "es-AR": "La Argentina sostiene que un ataque combinado alcanzó al portaviones HMS Invincible; la versión británica no reconoce el hundimiento ni un daño decisivo al buque.",
+        "en-GB": "Argentina maintains that a combined attack hit HMS Invincible; the British account does not accept that the carrier was sunk or decisively damaged.",
+        "status": "contested"
+      },
+      "historicalOutcome": "The historical record is contested; the game must present the disagreement rather than canonise one claim.",
+      "sources": ["ARG-ARMADA-MILESTONES", "ARG-FAA-ARCHIVE", "HASTINGS-JENKINS"],
+      "verification": {"status":"contested","notes":"Do not make this a required campaign fact until British and Argentine archival accounts are compared at document level."}
+    },
+    {
+      "id": "land-advance",
+      "dateStart": "1982-06-05",
+      "dateEnd": "1982-06-10",
+      "category": "land-and-logistics",
+      "locations": ["East Falkland", "Monte Harriet", "Monte Dos Hermanas", "approaches to Stanley"],
+      "units": ["British land forces", "Argentine Army and Marine positions", "British naval and field artillery"],
+      "summary": {
+        "es-AR": "La fuerza terrestre británica consolida la cabeza de playa y se aproxima a Puerto Argentino, preparando los ataques contra las alturas que protegen la capital.",
+        "en-GB": "British land forces consolidate the bridgehead and move toward Stanley, preparing attacks on the heights protecting the capital."
+      },
+      "historicalOutcome": "The operational focus shifts from the San Carlos bridgehead to the defensive ring around Stanley.",
+      "sources": ["OSPREY-GROUND", "ARG-ARMADA-MILESTONES", "HASTINGS-JENKINS"],
+      "verification": {"status":"verified-primary-led","notes":"This interval needs a separate daily land-movement pass before it becomes a playable scenario."}
+    },
+    {
+      "id": "bluff-cove",
+      "dateStart": "1982-06-08",
+      "dateEnd": "1982-06-08",
+      "category": "air-and-amphibious",
+      "locations": ["Fitzroy", "Bluff Cove"],
+      "units": ["RFA Sir Galahad", "RFA Sir Tristram", "Argentine A-4 Skyhawk", "British Guards units"],
+      "summary": {
+        "es-AR": "Ataques de A-4 argentinos alcanzan buques británicos en Fitzroy/Bluff Cove durante el traslado de tropas.",
+        "en-GB": "Argentine A-4 attacks strike British ships at Fitzroy/Bluff Cove during the transfer of troops."
+      },
+      "historicalOutcome": "The attack causes severe British losses and delays the final advance on Stanley.",
+      "sources": ["HASTINGS-JENKINS", "OSPREY-GROUND", "ARG-FAA-ARCHIVE"],
+      "verification": {"status":"verified-2-sources","notes":"Ship-by-ship casualty and unit details remain to be reconciled from Argentine and British records."}
+    },
+    {
+      "id": "longdon-dos-hermanas-harriet",
+      "dateStart": "1982-06-11",
+      "dateEnd": "1982-06-12",
+      "category": "land",
+      "locations": ["Monte Longdon", "Monte Dos Hermanas", "Monte Harriet"],
+      "units": ["3 PARA", "British Royal Marines", "Argentine Regimiento de Infantería 4", "Argentine Regimiento de Infantería 7", "Argentine artillery"],
+      "summary": {
+        "es-AR": "Comienzan los ataques británicos contra las alturas occidentales y norteñas del dispositivo de Puerto Argentino; Longdon, Dos Hermanas y Harriet son escenarios de combates intensos.",
+        "en-GB": "British attacks begin against the western and northern heights of the Stanley defensive system; Longdon, Two Sisters and Harriet see intense fighting."
+      },
+      "historicalOutcome": "British forces take key heights and open the final approach to Stanley.",
+      "sources": ["ARG-CONICET-LONGDON", "OSPREY-GROUND", "ARG-ARMADA-MILESTONES"],
+      "verification": {"status":"verified-2-sources","notes":"Terrain and command relationships require a map-and-testimony pass before balancing the mission."}
+    },
+    {
+      "id": "glamorgan",
+      "dateStart": "1982-06-12",
+      "dateEnd": "1982-06-12",
+      "category": "naval-and-land",
+      "locations": ["Fitzroy area / east of Stanley"],
+      "units": ["HMS Glamorgan", "Argentine coastal-defence Exocet unit"],
+      "summary": {
+        "es-AR": "El HMS Glamorgan es alcanzado por un misil Exocet lanzado desde una posición costera argentina.",
+        "en-GB": "HMS Glamorgan is hit by an Exocet missile launched from an Argentine coastal position."
+      },
+      "historicalOutcome": "The ship is damaged but remains part of the campaign's naval gunfire support.",
+      "sources": ["ARG-ARMADA-MILESTONES", "RN-MUSEUMS-OVERVIEW", "HASTINGS-JENKINS"],
+      "verification": {"status":"verified-2-sources","notes":"The launcher identity and firing sequence need document-level confirmation before modelling."}
+    },
+    {
+      "id": "tumbledown",
+      "dateStart": "1982-06-12",
+      "dateEnd": "1982-06-14",
+      "category": "land",
+      "locations": ["Monte Tumbledown", "Sapper Hill", "Pony's Pass"],
+      "units": ["2 Scots Guards", "Royal Marines", "BIM 5", "Argentine artillery"],
+      "summary": {
+        "es-AR": "Las fuerzas británicas atacan Monte Tumbledown y las posiciones conectadas con Sapper Hill y Pony's Pass, defendidas por unidades argentinas, incluido el BIM 5.",
+        "en-GB": "British forces attack Mount Tumbledown and positions linked to Sapper Hill and Pony's Pass, defended by Argentine units including BIM 5."
+      },
+      "historicalOutcome": "The defensive heights around Stanley are lost before the surrender.",
+      "sources": ["ARG-CONICET-LONGDON", "ARG-ARMADA-MILESTONES", "OSPREY-GROUND"],
+      "verification": {"status":"verified-2-sources","notes":"Combat chronology spans nights and should be broken into mission phases rather than one scripted event."}
+    },
+    {
+      "id": "wireless-ridge",
+      "dateStart": "1982-06-13",
+      "dateEnd": "1982-06-14",
+      "category": "land",
+      "locations": ["Wireless Ridge", "Moody Brook", "Camber Peninsula"],
+      "units": ["2 PARA", "3 PARA support element", "Scorpion and Scimitar", "Argentine Regimiento de Infantería 7", "Escuadrón de Exploración de Caballería Blindado 10", "GADA 101"],
+      "summary": {
+        "es-AR": "El 2 PARA, apoyado por blindados y artillería, ataca Wireless Ridge; el Regimiento de Infantería 7 y unidades argentinas de apoyo combaten durante la noche.",
+        "en-GB": "2 PARA, supported by armoured vehicles and artillery, attacks Wireless Ridge; RI 7 and Argentine support units fight through the night."
+      },
+      "historicalOutcome": "Wireless Ridge is in British hands by the morning of 14 June.",
+      "sources": ["ARG-LAST-BATTLES", "OSPREY-GROUND", "HASTINGS-JENKINS"],
+      "verification": {"status":"verified-2-sources","notes":"The Argentine official account provides detailed timings; the British order of battle still needs a document-level cross-check."}
+    },
+    {
+      "id": "surrender",
+      "dateStart": "1982-06-14",
+      "dateEnd": "1982-06-14",
+      "category": "surrender-and-aftermath",
+      "locations": ["Puerto Argentino/Stanley", "East Falkland"],
+      "units": ["Argentine garrison under General Mario Menéndez", "British land forces under Major General Jeremy Moore"],
+      "summary": {
+        "es-AR": "El comandante argentino en las islas firma la rendición ante el comandante británico; cesan las operaciones principales en las islas.",
+        "en-GB": "The Argentine commander on the islands signs the surrender to the British commander; major operations on the islands cease."
+      },
+      "historicalOutcome": "The Argentine forces in the Falkland Islands surrender on 14 June 1982.",
+      "sources": ["FALKLANDS-NATIONAL-ARCHIVES-1982", "RN-MUSEUMS-OVERVIEW", "HASTINGS-JENKINS"],
+      "verification": {"status":"verified-2-sources","notes":"The surrender instrument is available through the Falkland Islands National Archives and should become the canonical campaign-end record."}
+    }
+  ]
+}

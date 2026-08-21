@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "ARG-FAA-TIMELINE",
+      "title": "Hitos de Malvinas - Línea de tiempo",
+      "institution": "Fuerza Aérea Argentina",
+      "kind": "official-timeline",
+      "url": "https://www.argentina.gob.ar/node/179441",
+      "scope": "FAA milestones, 2 April, 5 April, 12 April and air operations"
+    },
+    {
+      "id": "ARG-FAA-ARIES",
+      "title": "Operación Aries 82: la génesis del asalto aéreo a las Islas Malvinas",
+      "institution": "Fuerza Aérea Argentina",
+      "kind": "official-history",
+      "url": "https://www.argentina.gob.ar/node/308785",
+      "scope": "2 April air bridge, TC-68, Pucará deployment and BAM Malvinas"
+    },
+    {
+      "id": "ARG-FAA-ARCHIVE",
+      "title": "Colección temática Malvinas - Fuerza Aérea Argentina",
+      "institution": "Dirección de Estudios Históricos de la Fuerza Aérea Argentina",
+      "kind": "archive-catalogue",
+      "url": "https://www.argentina.gob.ar/defensa/archivos-abiertos/malvinas-40-anos/coleccion-tematica-malvinas-fuerza-aerea-argentina",
+      "scope": "archive provenance, flight logs, operational reports, casualty lists and BANIM material"
+    },
+    {
+      "id": "ARG-ARMADA-MAY",
+      "title": "Efemérides navales - Mayo",
+      "institution": "Armada Argentina",
+      "kind": "official-timeline",
+      "url": "https://www.argentina.gob.ar/armada/efemerides-navales/mayo",
+      "scope": "Belgrano, Sheffield and Isla de los Estados"
+    },
+    {
+      "id": "ARG-ARMADA-MILESTONES",
+      "title": "Hitos Históricos",
+      "institution": "Argentina.gob.ar",
+      "kind": "official-timeline",
+      "url": "https://www.argentina.gob.ar/hitos-historicos",
+      "scope": "main naval and land milestones, including San Carlos, Coventry and Stanley approaches"
+    },
+    {
+      "id": "ARG-ARMY-DEFENCE",
+      "title": "Inicio de las hostilidades",
+      "institution": "Ejército Argentino",
+      "kind": "official-history",
+      "url": "https://www.argentina.gob.ar/ejercito/malvinas/defensa",
+      "scope": "1 May air defence, Belgrano, Sheffield and opening ground campaign"
+    },
+    {
+      "id": "ARG-LAST-BATTLES",
+      "title": "Malvinas 44 años: últimos combates por Malvinas",
+      "institution": "Argentina.gob.ar",
+      "kind": "official-history",
+      "url": "https://www.argentina.gob.ar/noticias/malvinas-44-anos-ultimos-combates-por-malvinas",
+      "scope": "Wireless Ridge, RI 7, 2 PARA, armour and artillery details"
+    },
+    {
+      "id": "ARG-CONICET-LONGDON",
+      "title": "Los rostros y la savia de la Guerra de Malvinas",
+      "institution": "CONICET / Argentina.gob.ar",
+      "kind": "research-project",
+      "url": "https://www.argentina.gob.ar/noticias/junto-veteranos-de-guerra-especialistas-del-conicet-realizaron-la-primera-campana",
+      "scope": "terrain and combat research for Longdon and Tumbledown"
+    },
+    {
+      "id": "FALKLANDS-NATIONAL-ARCHIVES-1982",
+      "title": "1982",
+      "institution": "Falkland Islands National Archives",
+      "kind": "primary-archive-index",
+      "url": "https://nationalarchives.gov.fk/1982",
+      "scope": "2 April invasion, 3 April South Georgia, 21 May San Carlos and 14 June surrender documents"
+    },
+    {
+      "id": "RN-MUSEUMS-APRIL",
+      "title": "Falklands 40: Key naval dates April 1982",
+      "institution": "Royal Navy Museums",
+      "kind": "institutional-history",
+      "url": "https://www.royalnavymuseums.org.uk/news/falklands-40-key-naval-dates-april-1982",
+      "scope": "South Georgia, task force departure and April naval chronology"
+    },
+    {
+      "id": "RN-MUSEUMS-OVERVIEW",
+      "title": "Falklands 40: Conflict Overview",
+      "institution": "Royal Navy Museums",
+      "kind": "institutional-history",
+      "url": "https://www.royalnavymuseums.org.uk/news/falklands-40-conflict-overview",
+      "scope": "Operation Corporate, exclusion zone, naval losses, logistics and conclusion"
+    },
+    {
+      "id": "RN-SAN-CARLOS",
+      "title": "San Carlos landings anniversary begins the Royal Navy's hardest week",
+      "institution": "Royal Navy",
+      "kind": "institutional-history",
+      "url": "https://www.royalnavy.mod.uk/news/2021/may/21/20210521-san-carlos",
+      "scope": "21 May landings and HMS Ardent"
+    },
+    {
+      "id": "OSPREY-GROUND",
+      "title": "The Falklands 1982: Ground operations in the South Atlantic",
+      "institution": "Osprey Publishing",
+      "kind": "secondary-book",
+      "url": "https://www.ospreypublishing.com/uk/falklands-1982-9781849086073/",
+      "scope": "land campaign, orders of battle and Goose Green, Longdon, Tumbledown and Wireless Ridge"
+    },
+    {
+      "id": "HASTINGS-JENKINS",
+      "title": "The Battle for the Falklands",
+      "institution": "Pan Macmillan",
+      "kind": "secondary-book",
+      "authors": ["Max Hastings", "Simon Jenkins"],
+      "url": "https://www.panmacmillan.com/authors/max-hastings/the-battle-for-the-falklands/9781529047806",
+      "scope": "campaign narrative, political and operational context"
+    },
+    {
+      "id": "MIDDLEBROOK",
+      "title": "The Fight for the Malvinas: The Argentine Forces in the Falklands War",
+      "institution": "Viking",
+      "kind": "secondary-book",
+      "authors": ["Martin Middlebrook"],
+      "url": "https://books.google.com/books/about/The_Fight_for_the_Malvinas.html?id=7tIZAAAAYAAJ",
+      "scope": "Argentine forces, participants, units and ground/air/naval operations"
+    }
+  ]
+}

@@ -57,8 +57,35 @@ export interface LocalizedMissionText {
   "en-GB": string;
 }
 
+export interface MissionPlan {
+  id: string;
+  side: Side;
+  name: LocalizedMissionText;
+  description: LocalizedMissionText;
+  effect: LocalizedMissionText;
+  moraleBonus: number;
+  ammunitionBonus: number;
+}
+
+export interface MissionNarrativeMoment {
+  id: string;
+  atSecond: number;
+  title: LocalizedMissionText;
+  body: LocalizedMissionText;
+  sourceIds: string[];
+}
+
+export interface MissionBriefing {
+  theatre: LocalizedMissionText;
+  situation: LocalizedMissionText;
+  historicalFrame: LocalizedMissionText;
+  playerObjective: Record<Side, LocalizedMissionText>;
+  plans: MissionPlan[];
+}
+
 export interface MissionDefinition {
   id: string;
+  title: LocalizedMissionText;
   dateStart: string;
   dateEnd: string;
   tickRate: typeof TICK_RATE;
@@ -70,6 +97,8 @@ export interface MissionDefinition {
   };
   initialUnits: MissionUnitConfig[];
   objectives: MissionObjective[];
+  briefing: MissionBriefing;
+  narrativeMoments: MissionNarrativeMoment[];
   historicalOutcome: HistoricalOutcome;
   sourceIds: string[];
   abstractionNote: LocalizedMissionText;
@@ -120,7 +149,7 @@ export interface MatchState {
 
 export interface SimulationEvent {
   tick: number;
-  type: "unit-damaged" | "unit-destroyed" | "objective-captured" | "reinforcement" | "match-ended";
+  type: "unit-damaged" | "unit-destroyed" | "objective-captured" | "reinforcement" | "plan-selected" | "match-ended";
   message: string;
   unitId?: string;
   featureId?: string;

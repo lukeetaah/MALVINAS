@@ -256,6 +256,7 @@ function finishIfNeeded(state: MatchState, mission: MissionDefinition): void {
 export function createMissionState(
   mission: MissionDefinition = GOOSE_GREEN_MISSION,
   matchId = "local-goose-green",
+  planId?: string,
 ): MatchState {
   const units = mission.initialUnits.map<UnitState>((config) => ({
     ...config,
@@ -282,6 +283,19 @@ export function createMissionState(
     control,
     eventLog: [],
   };
+  const plan = mission.briefing.plans.find((candidate) => candidate.id === planId);
+  if (plan) {
+    for (const unit of state.units.filter((candidate) => candidate.side === plan.side)) {
+      unit.morale = Math.min(1, unit.morale + plan.moraleBonus);
+      unit.ammunition += plan.ammunitionBonus;
+    }
+    state.logistics[plan.side].ammunition += plan.ammunitionBonus * state.units.filter((unit) => unit.side === plan.side).length;
+    pushEvent(state, {
+      tick: 0,
+      type: "plan-selected",
+      message: `${plan.side} adopta: ${plan.name["es-AR"]}`,
+    });
+  }
   updateControl(state, mission);
   return state;
 }
@@ -290,12 +304,13 @@ export function stepMission(
   current: MatchState,
   mission: MissionDefinition = GOOSE_GREEN_MISSION,
   commands: SimCommand[] = [],
+  aiSide: Side = "britain",
 ): MatchState {
   if (current.status !== "playing") return current;
   const state = structuredClone(current) as MatchState;
   state.tick += 1;
   for (const command of commands.sort((a, b) => a.sequence - b.sequence)) applyCommand(state, mission, command);
-  runAi(state, mission, "britain");
+  runAi(state, mission, aiSide);
   moveUnits(state, mission);
   resolveCombat(state, mission);
   updateControl(state, mission);

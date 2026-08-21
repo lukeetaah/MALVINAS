@@ -1,5 +1,9 @@
 {
   "id": "goose-green-1982",
+  "title": {
+    "es-AR": "Darwin — Pradera del Ganso",
+    "en-GB": "Darwin — Goose Green"
+  },
   "dateStart": "1982-05-27",
   "dateEnd": "1982-05-29",
   "tickRate": 10,
@@ -31,6 +35,91 @@
     {"id":"argentina-hold-airfield","side":"argentina","kind":"hold","featureId":"darwin-airfield"},
     {"id":"britain-capture-settlement","side":"britain","kind":"capture","featureId":"goose-green-settlement"},
     {"id":"britain-capture-airfield","side":"britain","kind":"capture","featureId":"darwin-airfield"}
+  ],
+  "briefing": {
+    "theatre": {
+      "es-AR": "Istmo de Darwin · Isla Soledad · Atlántico Sur",
+      "en-GB": "Darwin isthmus · East Falkland · South Atlantic"
+    },
+    "situation": {
+      "es-AR": "Entre el 27 y el 29 de mayo de 1982, la Fuerza de Tareas Mercedes defendió Darwin y Pradera del Ganso frente al avance británico. Esta misión condensa posiciones y subunidades en un tablero táctico: no reemplaza el orden de batalla completo ni un mapa topográfico exacto.",
+      "en-GB": "Between 27 and 29 May 1982, Task Force Mercedes defended Darwin and Goose Green against the British advance. This mission condenses positions and sub-units into a tactical board; it does not replace the complete order of battle or an exact topographic map."
+    },
+    "historicalFrame": {
+      "es-AR": "El desenlace histórico fue la captura británica de Darwin y Pradera del Ganso. Tu partida no reescribe el archivo: permite explorar decisiones y sus consecuencias en una simulación separada.",
+      "en-GB": "The recorded outcome was the British capture of Darwin and Goose Green. Your match does not rewrite the archive: it lets you explore decisions and their consequences in a separate simulation."
+    },
+    "playerObjective": {
+      "argentina": {
+        "es-AR": "Sostené el aeródromo de Darwin y el asentamiento de Pradera del Ganso hasta que termine la ventana operativa.",
+        "en-GB": "Hold Darwin airfield and the Goose Green settlement until the operational window ends."
+      },
+      "britain": {
+        "es-AR": "Tomá el aeródromo de Darwin y el asentamiento de Pradera del Ganso antes del límite de tiempo.",
+        "en-GB": "Capture Darwin airfield and the Goose Green settlement before time expires."
+      }
+    },
+    "plans": [
+      {
+        "id": "argentina-layered-defense",
+        "side": "argentina",
+        "name": {"es-AR":"Defensa escalonada", "en-GB":"Layered defence"},
+        "description": {"es-AR":"Priorizá cobertura, reserva y control de los accesos al istmo.", "en-GB":"Prioritise cover, reserve and control of the isthmus approaches."},
+        "effect": {"es-AR":"+10% moral inicial", "en-GB":"+10% starting morale"},
+        "moraleBonus": 0.1,
+        "ammunitionBonus": 0
+      },
+      {
+        "id": "argentina-fire-discipline",
+        "side": "argentina",
+        "name": {"es-AR":"Disciplina de fuego", "en-GB":"Fire discipline"},
+        "description": {"es-AR":"Conservá munición para responder sobre objetivos expuestos.", "en-GB":"Preserve ammunition for exposed targets."},
+        "effect": {"es-AR":"+12 municiones por unidad", "en-GB":"+12 ammunition per unit"},
+        "moraleBonus": 0,
+        "ammunitionBonus": 12
+      },
+      {
+        "id": "britain-coordinated-assault",
+        "side": "britain",
+        "name": {"es-AR":"Asalto coordinado", "en-GB":"Coordinated assault"},
+        "description": {"es-AR":"Concentrá el avance sobre los dos objetivos principales.", "en-GB":"Concentrate the advance on the two primary objectives."},
+        "effect": {"es-AR":"+10% moral inicial", "en-GB":"+10% starting morale"},
+        "moraleBonus": 0.1,
+        "ammunitionBonus": 0
+      },
+      {
+        "id": "britain-sustained-fire",
+        "side": "britain",
+        "name": {"es-AR":"Fuego sostenido", "en-GB":"Sustained fire"},
+        "description": {"es-AR":"Reforzá la capacidad de apoyo antes de avanzar.", "en-GB":"Reinforce support capacity before advancing."},
+        "effect": {"es-AR":"+12 municiones por unidad", "en-GB":"+12 ammunition per unit"},
+        "moraleBonus": 0,
+        "ammunitionBonus": 12
+      }
+    ]
+  },
+  "narrativeMoments": [
+    {
+      "id": "approach",
+      "atSecond": 0,
+      "title": {"es-AR":"La línea se tensa", "en-GB":"The line tightens"},
+      "body": {"es-AR":"Las fuerzas británicas se aproximan desde el este. Las posiciones de Darwin y Pradera del Ganso definen el primer contacto de la simulación.", "en-GB":"British forces approach from the east. Darwin and Goose Green positions define the simulation's first contact."},
+      "sourceIds": ["ARG-GOOSE-GREEN", "UK-PARA-GOOSE-GREEN"]
+    },
+    {
+      "id": "boca-house",
+      "atSecond": 55,
+      "title": {"es-AR":"Presión sobre Boca House", "en-GB":"Pressure at Boca House"},
+      "body": {"es-AR":"El combate histórico incluyó acciones decisivas en las posiciones intermedias. En esta partida, Boca House funciona como cobertura y punto de paso, no como una reconstrucción minuto a minuto.", "en-GB":"The historical battle included decisive actions at intermediate positions. In this match, Boca House is cover and a waypoint, not a minute-by-minute reconstruction."},
+      "sourceIds": ["ARG-GOOSE-GREEN-DETAILS", "MIDDLEBROOK"]
+    },
+    {
+      "id": "airfield",
+      "atSecond": 115,
+      "title": {"es-AR":"El aeródromo entra en juego", "en-GB":"The airfield comes into play"},
+      "body": {"es-AR":"La defensa del aeródromo fue un componente del dispositivo en Darwin. Sostenerlo o capturarlo cambia el resultado de la partida, aunque no el registro histórico.", "en-GB":"The airfield's defence was part of the Darwin disposition. Holding or capturing it changes this match's result, though not the historical record."},
+      "sourceIds": ["ARG-GOOSE-GREEN", "OSPREY-GROUND"]
+    }
   ],
   "historicalOutcome": {
     "id":"historical-goose-green-british-capture",

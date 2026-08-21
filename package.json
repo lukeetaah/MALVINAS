@@ -5,7 +5,7 @@
   "packageManager": "pnpm@11.9.0",
   "scripts": {
     "dev": "pnpm --filter @malvinas/web dev",
-    "build": "pnpm -r build",
+    "build": "pnpm --filter @malvinas/web build",
     "typecheck": "pnpm -r typecheck",
     "test": "vitest run"
   },

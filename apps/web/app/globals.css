@@ -24,3 +24,54 @@ h1 { margin: 0; font-size: clamp(56px, 12vw, 112px); letter-spacing: .08em; line
 .status { display: inline-flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); color: var(--ink); font-size: 13px; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
 .note { margin: 40px 0 0; color: var(--muted); font-size: 13px; }
+
+.mission-shell { min-height: 100vh; padding: 28px clamp(16px, 4vw, 64px) 56px; background: linear-gradient(145deg, #17221f, #0b1212 70%); }
+.mission-header { max-width: 1400px; margin: 0 auto 24px; display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.mission-header h1 { font-size: clamp(28px, 4vw, 54px); letter-spacing: .02em; line-height: 1; }
+.mission-subtitle { max-width: 720px; margin: 16px 0 0; color: var(--muted); line-height: 1.5; }
+.mission-actions { display: flex; gap: 8px; flex-shrink: 0; }
+button { border: 1px solid var(--line); background: #23312d; color: var(--ink); padding: 10px 14px; cursor: pointer; font: inherit; }
+button:hover { background: #30413a; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+.mission-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; }
+.battle-panel, .mission-sidebar > div, .result-panel { border: 1px solid var(--line); background: rgba(25, 37, 34, .9); }
+.battle-panel { min-width: 0; padding: 12px; }
+.battle-topbar { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 11px; letter-spacing: .12em; padding: 6px 4px 12px; }
+.battle-topbar strong { color: var(--accent); }
+.battle-map { display: block; width: 100%; min-height: 480px; max-height: 700px; background: #273630; cursor: crosshair; }
+.map-label, .unit-label { fill: #d5dcc5; font-size: 2px; pointer-events: none; text-transform: uppercase; letter-spacing: .04em; }
+.unit-label { fill: #e4e7d2; font-size: 1.7px; }
+.map-hint { margin: 10px 2px 0; color: var(--muted); font-size: 12px; }
+.mission-sidebar { display: flex; flex-direction: column; gap: 12px; }
+.mission-sidebar > div { padding: 16px; }
+.stat-card > span, .objective-card > span, .event-card > span { display: block; color: var(--accent); font-size: 10px; letter-spacing: .16em; font-weight: 700; }
+.stat-card strong { display: block; margin: 10px 0; font-size: 31px; font-weight: 400; }
+.stat-card strong small { color: var(--muted); font-size: 12px; }
+.bar { height: 4px; background: #101916; }
+.bar i { display: block; height: 100%; background: #b7c99c; }
+.support-button { width: 100%; font-size: 12px; }
+.objective-card { display: flex; flex-direction: column; gap: 10px; }
+.objective { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; text-transform: capitalize; }
+.objective-dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--accent); }
+.objective-dot.complete { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.event-card { min-height: 160px; }
+.event-card p { margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.35; }
+.result-panel { max-width: 1400px; margin: 16px auto 0; padding: 22px; }
+.result-panel h2 { margin: 8px 0; font-size: clamp(24px, 4vw, 42px); font-weight: 400; }
+.result-panel > p:not(.eyebrow):not(.result-note) { color: var(--muted); }
+.result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.result-grid div { border: 1px solid var(--line); padding: 14px; }
+.result-grid span { display: block; color: var(--muted); font-size: 11px; }
+.result-grid strong { display: block; margin-top: 8px; color: var(--accent); font-size: 16px; font-weight: 400; }
+.result-note { color: var(--muted); font-size: 13px; }
+@media (max-width: 900px) {
+  .mission-header { align-items: start; flex-direction: column; }
+  .mission-grid { grid-template-columns: 1fr; }
+  .mission-sidebar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .event-card { grid-column: 1 / -1; }
+  .battle-map { min-height: 360px; }
+}
+@media (max-width: 560px) {
+  .mission-sidebar, .result-grid { grid-template-columns: 1fr; }
+  .battle-topbar { font-size: 9px; }
+}

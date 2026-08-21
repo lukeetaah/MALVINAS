@@ -1,0 +1,48 @@
+{
+  "id": "goose-green-1982",
+  "dateStart": "1982-05-27",
+  "dateEnd": "1982-05-29",
+  "tickRate": 10,
+  "timeLimitSeconds": 180,
+  "map": {
+    "width": 100,
+    "height": 60,
+    "features": [
+      {"id":"darwin-airfield","kind":"airfield","position":{"x":18,"y":18},"radius":7,"cover":0.1},
+      {"id":"goose-green-settlement","kind":"settlement","position":{"x":23,"y":42},"radius":8,"cover":0.35},
+      {"id":"boca-house","kind":"position","position":{"x":42,"y":30},"radius":5,"cover":0.25},
+      {"id":"school-position","kind":"position","position":{"x":31,"y":36},"radius":5,"cover":0.3}
+    ]
+  },
+  "initialUnits": [
+    {"id":"ri12-company-a","side":"argentina","kind":"infantry","label":"RI 12 · Compañía A","position":{"x":28,"y":40},"health":100,"morale":0.8,"ammunition":80,"fuel":1,"speed":4.1,"attackRange":7,"damage":11},
+    {"id":"ri25-company-c","side":"argentina","kind":"infantry","label":"RI 25 · Compañía C","position":{"x":32,"y":34},"health":100,"morale":0.82,"ammunition":78,"fuel":1,"speed":4.2,"attackRange":7,"damage":10},
+    {"id":"reserve-estevez","side":"argentina","kind":"infantry","label":"Sección de Reserva","position":{"x":27,"y":29},"health":100,"morale":0.86,"ammunition":60,"fuel":1,"speed":4.5,"attackRange":7,"damage":9},
+    {"id":"gada-601","side":"argentina","kind":"support-weapon","label":"GADA 601 · Oerlikon 35 mm","position":{"x":19,"y":22},"health":100,"morale":0.75,"ammunition":55,"fuel":1,"speed":2.2,"attackRange":12,"damage":16},
+    {"id":"ga4-otto-melara","side":"argentina","kind":"artillery","label":"GA Aerotransportado 4 · 105 mm","position":{"x":13,"y":27},"health":100,"morale":0.78,"ammunition":35,"fuel":1,"speed":2,"attackRange":18,"damage":19},
+    {"id":"2para-a","side":"britain","kind":"infantry","label":"2 PARA · A Company","position":{"x":76,"y":19},"health":100,"morale":0.9,"ammunition":88,"fuel":1,"speed":4.6,"attackRange":7,"damage":11},
+    {"id":"2para-b","side":"britain","kind":"infantry","label":"2 PARA · B Company","position":{"x":82,"y":29},"health":100,"morale":0.9,"ammunition":88,"fuel":1,"speed":4.6,"attackRange":7,"damage":11},
+    {"id":"2para-d","side":"britain","kind":"infantry","label":"2 PARA · D Company","position":{"x":78,"y":42},"health":100,"morale":0.88,"ammunition":84,"fuel":1,"speed":4.6,"attackRange":7,"damage":11},
+    {"id":"3para-support","side":"britain","kind":"support-weapon","label":"3 PARA · Support","position":{"x":88,"y":35},"health":100,"morale":0.86,"ammunition":52,"fuel":1,"speed":3.4,"attackRange":12,"damage":15},
+    {"id":"british-milan","side":"britain","kind":"support-weapon","label":"Anti-armour section","position":{"x":84,"y":48},"health":100,"morale":0.84,"ammunition":35,"fuel":1,"speed":3.2,"attackRange":16,"damage":18}
+  ],
+  "objectives": [
+    {"id":"argentina-hold-settlement","side":"argentina","kind":"hold","featureId":"goose-green-settlement"},
+    {"id":"argentina-hold-airfield","side":"argentina","kind":"hold","featureId":"darwin-airfield"},
+    {"id":"britain-capture-settlement","side":"britain","kind":"capture","featureId":"goose-green-settlement"},
+    {"id":"britain-capture-airfield","side":"britain","kind":"capture","featureId":"darwin-airfield"}
+  ],
+  "historicalOutcome": {
+    "id":"historical-goose-green-british-capture",
+    "winner":"britain",
+    "summary": {
+      "es-AR":"Entre el 28 y el 30 de mayo, las fuerzas británicas capturaron Darwin y Pradera del Ganso después de un combate prolongado.",
+      "en-GB":"Between 28 and 30 May, British forces captured Darwin and Goose Green after a prolonged battle."
+    }
+  },
+  "sourceIds": ["ARG-GOOSE-GREEN","ARG-GOOSE-GREEN-DETAILS","UK-PARA-GOOSE-GREEN","OSPREY-GROUND","MIDDLEBROOK"],
+  "abstractionNote": {
+    "es-AR":"Este prototipo representa subunidades como fichas tácticas. No es todavía un mapa GIS ni reproduce el orden de batalla completo de la Fuerza de Tareas Mercedes.",
+    "en-GB":"This prototype represents sub-units as tactical pieces. It is not yet a GIS map and does not reproduce the complete order of battle of Task Force Mercedes."
+  }
+}

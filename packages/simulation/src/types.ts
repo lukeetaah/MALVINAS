@@ -14,16 +14,86 @@ export type UnitKind =
 
 export type Vec2 = { x: number; y: number };
 
+export type UnitOrder = "idle" | "move" | "attack";
+
+export interface TerrainFeature {
+  id: string;
+  kind: "airfield" | "settlement" | "position" | "open-ground";
+  position: Vec2;
+  radius: number;
+  cover: number;
+}
+
+export interface MissionUnitConfig {
+  id: string;
+  side: Side;
+  kind: UnitKind;
+  label: string;
+  position: Vec2;
+  health: number;
+  morale: number;
+  ammunition: number;
+  fuel: number;
+  speed: number;
+  attackRange: number;
+  damage: number;
+}
+
+export interface MissionObjective {
+  id: string;
+  side: Side;
+  kind: "hold" | "capture";
+  featureId: string;
+}
+
+export interface HistoricalOutcome {
+  id: string;
+  winner: Side;
+  summary: LocalizedMissionText;
+}
+
+export interface LocalizedMissionText {
+  "es-AR": string;
+  "en-GB": string;
+}
+
+export interface MissionDefinition {
+  id: string;
+  dateStart: string;
+  dateEnd: string;
+  tickRate: typeof TICK_RATE;
+  timeLimitSeconds: number;
+  map: {
+    width: number;
+    height: number;
+    features: TerrainFeature[];
+  };
+  initialUnits: MissionUnitConfig[];
+  objectives: MissionObjective[];
+  historicalOutcome: HistoricalOutcome;
+  sourceIds: string[];
+  abstractionNote: LocalizedMissionText;
+}
+
 export interface UnitState {
   id: string;
   side: Side;
   kind: UnitKind;
+  label: string;
   position: Vec2;
   health: number;
   morale: number;
   ammunition: number;
   fuel: number;
   selected: boolean;
+  order: UnitOrder;
+  destination: Vec2 | null;
+  targetUnitId: string | null;
+  speed: number;
+  attackRange: number;
+  damage: number;
+  cooldownUntilTick: number;
+  alive: boolean;
 }
 
 export interface LogisticsState {
@@ -41,7 +111,19 @@ export interface MatchState {
   status: MatchStatus;
   units: UnitState[];
   logistics: Record<Side, LogisticsState>;
+  selectedUnitIds: string[];
+  control: Record<string, Side | null>;
+  eventLog: SimulationEvent[];
+  endReason?: string;
   winner?: Side;
+}
+
+export interface SimulationEvent {
+  tick: number;
+  type: "unit-damaged" | "unit-destroyed" | "objective-captured" | "reinforcement" | "match-ended";
+  message: string;
+  unitId?: string;
+  featureId?: string;
 }
 
 export type CommandType =

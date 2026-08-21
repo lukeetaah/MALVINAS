@@ -58,6 +58,30 @@
       "scope": "Wireless Ridge, RI 7, 2 PARA, armour and artillery details"
     },
     {
+      "id": "ARG-GOOSE-GREEN",
+      "title": "Rumbo a los 40 años de Malvinas: El combate de Darwin y Pradera del Ganso",
+      "institution": "Argentina.gob.ar",
+      "kind": "official-history",
+      "url": "https://www.argentina.gob.ar/node/258340",
+      "scope": "27–30 May battle, Task Force Mercedes and component units"
+    },
+    {
+      "id": "ARG-GOOSE-GREEN-DETAILS",
+      "title": "Darwin - Pradera del Ganso",
+      "institution": "Ejército Argentino",
+      "kind": "official-history",
+      "url": "https://www.argentina.gob.ar/ejercito/malvinas/defensa/darwin",
+      "scope": "Company A of RI 12, reserve section, Boca House and artillery-directed counterattack"
+    },
+    {
+      "id": "UK-PARA-GOOSE-GREEN",
+      "title": "The Parachute Regiment - 1982",
+      "institution": "British Army",
+      "kind": "institutional-history",
+      "url": "https://www.army.mod.uk/learn-and-explore/about-the-army/corps-regiments-and-units/infantry/parachute-regiment/",
+      "scope": "2 and 3 PARA in the Falklands campaign, including Goose Green"
+    },
+    {
       "id": "ARG-CONICET-LONGDON",
       "title": "Los rostros y la savia de la Guerra de Malvinas",
       "institution": "CONICET / Argentina.gob.ar",

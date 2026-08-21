@@ -2,6 +2,8 @@
 
 `master.json` es un índice diario separado del código de simulación. La fecha y el hecho histórico son datos fijos; el resultado de una partida futura será otro objeto, asociado sólo durante la sesión.
 
+`diaries.json` contiene el primer lote de bitácoras bilingües para el 2 y 3 de abril. `packages/narrative/src/catalog.ts` resuelve qué entradas aparecen cuando se dispara una fecha o una transición de misión.
+
 ## Estados de revisión
 
 - `verified-2-sources`: el hito tiene al menos una fuente institucional argentina y una fuente institucional/bibliográfica independiente.

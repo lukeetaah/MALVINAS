@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "malvinas-diaries-1982-april-02-03-v0.1",
+  "editorialNote": {
+    "es-AR": "Entradas documentales bilingües. No son diarios personales atribuidos a personas reales: las voces compuestas se identifican como tales y cada afirmación conserva sus referencias.",
+    "en-GB": "Bilingual documentary entries. They are not personal diaries attributed to real individuals: composite voices are labelled as such and every claim keeps its references."
+  },
+  "entries": [
+    {
+      "id": "diary-1982-04-02-air-bridge",
+      "date": "1982-04-02",
+      "missionId": "op-rosario",
+      "side": "argentina",
+      "audience": "argentina",
+      "voice": "operational-log",
+      "documentary": true,
+      "title": {
+        "es-AR": "El aeródromo vuelve a operar",
+        "en-GB": "The airfield becomes operational"
+      },
+      "body": {
+        "es-AR": "Registro documental de la operación: a las 08:45 aterrizó el C-130 Hércules TC-68 en el aeródromo de Puerto Argentino. La pista pasó a ser el enlace aéreo inicial entre las islas y el continente.",
+        "en-GB": "Operational record: at 08:45, C-130 Hercules TC-68 landed at the Port Stanley airfield. The runway became the initial air link between the islands and the mainland."
+      },
+      "location": {
+        "es-AR": "Aeródromo de Puerto Argentino",
+        "en-GB": "Port Stanley airfield"
+      },
+      "references": [
+        {"sourceId":"ARG-FAA-ARIES","locator":"2 April chronology","verified":true},
+        {"sourceId":"ARG-FAA-TIMELINE","locator":"2 April","verified":true}
+      ],
+      "unlock": {"kind":"mission-start","value":"op-rosario","missionId":"op-rosario"}
+    },
+    {
+      "id": "diary-1982-04-02-pucara",
+      "date": "1982-04-02",
+      "missionId": "op-rosario",
+      "side": "argentina",
+      "audience": "argentina",
+      "voice": "aircrew",
+      "documentary": true,
+      "title": {
+        "es-AR": "Los primeros Pucará",
+        "en-GB": "The first Pucarás"
+      },
+      "body": {
+        "es-AR": "A las 16:00 llegaron desde el continente los primeros cuatro IA-58 Pucará. La Base Aérea Militar Malvinas comenzó a organizarse alrededor del aeródromo recién habilitado.",
+        "en-GB": "At 16:00, the first four IA-58 Pucarás arrived from the mainland. BAM Malvinas began to organise around the newly operational airfield."
+      },
+      "location": {
+        "es-AR": "Base Aérea Militar Malvinas",
+        "en-GB": "BAM Malvinas"
+      },
+      "references": [
+        {"sourceId":"ARG-FAA-ARIES","locator":"2 April chronology","verified":true},
+        {"sourceId":"ARG-FAA-TIMELINE","locator":"2 April","verified":true}
+      ],
+      "unlock": {"kind":"mission-end","value":"op-rosario","missionId":"op-rosario"}
+    },
+    {
+      "id": "diary-1982-04-02-np8901",
+      "date": "1982-04-02",
+      "missionId": "op-rosario",
+      "side": "britain",
+      "audience": "britain",
+      "voice": "soldier",
+      "documentary": true,
+      "title": {
+        "es-AR": "El destacamento en Government House",
+        "en-GB": "The detachment at Government House"
+      },
+      "body": {
+        "es-AR": "El destacamento de 22 Royal Marines de NP8901 fue rodeado y capturado durante la toma argentina de las islas. La entrada conserva el hecho desde la perspectiva del contingente que defendía la sede del gobierno.",
+        "en-GB": "The 22-man Royal Marine detachment of NP8901 was rounded up and captured during the Argentine seizure of the islands. This entry records the event from the perspective of the contingent defending Government House."
+      },
+      "location": {
+        "es-AR": "Government House, Puerto Argentino/Stanley",
+        "en-GB": "Government House, Port Stanley"
+      },
+      "references": [
+        {"sourceId":"RN-MUSEUMS-APRIL","locator":"2 April 1982","verified":true},
+        {"sourceId":"FALKLANDS-NATIONAL-ARCHIVES-1982","locator":"1982 overview","verified":true}
+      ],
+      "unlock": {"kind":"mission-end","value":"op-rosario","missionId":"op-rosario"}
+    },
+    {
+      "id": "diary-1982-04-02-operation-result",
+      "date": "1982-04-02",
+      "missionId": "op-rosario",
+      "side": "neutral",
+      "audience": "correspondent",
+      "voice": "correspondent",
+      "documentary": true,
+      "title": {
+        "es-AR": "Una operación, dos nombres",
+        "en-GB": "One operation, two names"
+      },
+      "body": {
+        "es-AR": "La operación argentina es conocida como Rosario. En los registros británicos, el mismo inicio del conflicto aparece como la invasión del 2 de abril. El archivo del juego conserva ambas denominaciones según la fuente consultada.",
+        "en-GB": "The Argentine operation is known as Rosario. In British records, the same beginning of the conflict appears as the invasion of 2 April. The archive preserves both names according to the source consulted."
+      },
+      "location": {
+        "es-AR": "Islas Malvinas / Falkland Islands",
+        "en-GB": "Falkland Islands / Islas Malvinas"
+      },
+      "references": [
+        {"sourceId":"ARG-FAA-ARIES","locator":"operation title and chronology","verified":true},
+        {"sourceId":"FALKLANDS-NATIONAL-ARCHIVES-1982","locator":"2 April 1982","verified":true},
+        {"sourceId":"MIDDLEBROOK","locator":"campaign opening","verified":true}
+      ],
+      "unlock": {"kind":"mission-end","value":"op-rosario","missionId":"op-rosario"}
+    },
+    {
+      "id": "diary-1982-04-03-south-georgia",
+      "date": "1982-04-03",
+      "missionId": "south-georgia",
+      "side": "argentina",
+      "audience": "argentina",
+      "voice": "operational-log",
+      "documentary": true,
+      "title": {
+        "es-AR": "Grytviken",
+        "en-GB": "Grytviken"
+      },
+      "body": {
+        "es-AR": "La operación se extiende a las Georgias del Sur. En Grytviken, las fuerzas argentinas superan la resistencia del pequeño destacamento de Royal Marines; la acción incluye el derribo de un helicóptero Puma y daños al buque Guerrico antes de la rendición británica.",
+        "en-GB": "The operation extends to South Georgia. At Grytviken, Argentine forces overcome resistance from the small Royal Marine detachment; the action includes the downing of a Puma helicopter and damage to Guerrico before the British surrender."
+      },
+      "location": {
+        "es-AR": "Grytviken, Georgias del Sur",
+        "en-GB": "Grytviken, South Georgia"
+      },
+      "references": [
+        {"sourceId":"RN-MUSEUMS-APRIL","locator":"3 April 1982","verified":true},
+        {"sourceId":"FALKLANDS-NATIONAL-ARCHIVES-1982","locator":"3 April 1982","verified":true},
+        {"sourceId":"MIDDLEBROOK","locator":"South Georgia campaign","verified":true}
+      ],
+      "unlock": {"kind":"mission-start","value":"south-georgia","missionId":"south-georgia"}
+    },
+    {
+      "id": "diary-1982-04-03-royal-marines",
+      "date": "1982-04-03",
+      "missionId": "south-georgia",
+      "side": "britain",
+      "audience": "britain",
+      "voice": "soldier",
+      "documentary": true,
+      "title": {
+        "es-AR": "El destacamento de Grytviken",
+        "en-GB": "The Grytviken detachment"
+      },
+      "body": {
+        "es-AR": "La guarnición británica en Grytviken, formada por Royal Marines del HMS Endurance y refuerzos de NP8901, resiste hasta quedar superada. South Georgia entra en la cronología del conflicto como una operación distinta de la campaña de East Falkland.",
+        "en-GB": "The British garrison at Grytviken, made up of Royal Marines from HMS Endurance and NP8901 reinforcements, resists until overwhelmed. South Georgia enters the conflict chronology as a separate operation from the East Falkland campaign."
+      },
+      "location": {
+        "es-AR": "Grytviken, Georgias del Sur",
+        "en-GB": "Grytviken, South Georgia"
+      },
+      "references": [
+        {"sourceId":"RN-MUSEUMS-APRIL","locator":"3 April 1982","verified":true},
+        {"sourceId":"FALKLANDS-NATIONAL-ARCHIVES-1982","locator":"3 April 1982","verified":true}
+      ],
+      "unlock": {"kind":"mission-end","value":"south-georgia","missionId":"south-georgia"}
+    },
+    {
+      "id": "diary-1982-04-03-theatre-note",
+      "date": "1982-04-03",
+      "side": "neutral",
+      "audience": "correspondent",
+      "voice": "correspondent",
+      "documentary": true,
+      "title": {
+        "es-AR": "El conflicto se extiende",
+        "en-GB": "The conflict widens"
+      },
+      "body": {
+        "es-AR": "Dos espacios insulares quedan comprometidos en las primeras 48 horas: las Malvinas y las Georgias del Sur. La cronología los mantiene separados para que el jugador no confunda teatros, fuerzas ni objetivos.",
+        "en-GB": "Two island theatres are involved within the first 48 hours: the Falklands and South Georgia. The chronology keeps them separate so players do not confuse theatres, forces or objectives."
+      },
+      "location": {
+        "es-AR": "Atlántico Sur",
+        "en-GB": "South Atlantic"
+      },
+      "references": [
+        {"sourceId":"FALKLANDS-NATIONAL-ARCHIVES-1982","locator":"2–3 April 1982","verified":true},
+        {"sourceId":"RN-MUSEUMS-APRIL","locator":"2–3 April 1982","verified":true}
+      ],
+      "unlock": {"kind":"date","value":"1982-04-03"}
+    }
+  ]
+}

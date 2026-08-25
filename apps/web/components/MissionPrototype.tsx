@@ -424,7 +424,7 @@ export default function MissionPrototype() {
         </section>
 
         {/* Right Rail: Tactical Minimap, Force Roster & Historical Outcome */}
-        <aside className="right-rail space-y-3">
+        <aside className="right-rail">
           <Minimap
             state={state}
             mission={mission}

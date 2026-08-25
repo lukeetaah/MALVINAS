@@ -178,16 +178,17 @@ export function Minimap({
   };
 
   return (
-    <div className="relative border border-[#2b4133] rounded overflow-hidden bg-[#0a100d] shadow-lg">
-      <canvas
-        ref={canvasRef}
-        width={width}
-        height={height}
-        onPointerDown={handlePointerDown}
-        className="cursor-crosshair block"
-      />
-      <div className="absolute top-1 left-1.5 text-[9px] font-mono font-bold text-[#8da594] pointer-events-none uppercase tracking-wider">
+    <div className="minimap-card">
+      <p className="eyebrow" style={{ width: "100%", marginBottom: "6px" }}>
         RADAR TÁCTICO
+      </p>
+      <div className="minimap-canvas-frame">
+        <canvas
+          ref={canvasRef}
+          width={width}
+          height={height}
+          onPointerDown={handlePointerDown}
+        />
       </div>
     </div>
   );

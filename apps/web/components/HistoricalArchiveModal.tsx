@@ -71,26 +71,23 @@ export function HistoricalArchiveModal({
   }[locale];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-      <div className="flex flex-col w-full max-w-4xl max-h-[90vh] bg-[#0c1511] border border-[#2b4133] rounded-lg shadow-2xl overflow-hidden font-mono text-sm text-[#dce7dc]">
+    <div className="historical-modal-overlay">
+      <div className="historical-modal-box">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#2b4133] bg-[#111e18]">
+        <div className="historical-modal-header">
           <div>
-            <h2 className="text-base font-bold tracking-wider text-[#f4d787]">
+            <h2 className="telemetry-title" style={{ fontSize: "18px" }}>
               {labels.title}
             </h2>
-            <p className="text-xs text-[#8da594] mt-0.5">{labels.subtitle}</p>
+            <p style={{ margin: "2px 0 0", fontSize: "11px", color: "var(--mist)" }}>{labels.subtitle}</p>
           </div>
-          <button
-            onClick={onClose}
-            className="px-3 py-1 text-xs border border-[#44624d] rounded text-[#c5d36e] hover:bg-[#1a2d24] transition-colors"
-          >
+          <button onClick={onClose} className="telemetry-btn">
             ✕ {labels.close}
           </button>
         </div>
 
         {/* Tab selector */}
-        <div className="flex border-b border-[#2b4133] bg-[#0e1914] px-6 gap-2">
+        <div className="historical-modal-tabs">
           {(
             [
               ["diaries", labels.tabDiaries],
@@ -102,11 +99,7 @@ export function HistoricalArchiveModal({
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`py-3 px-4 text-xs font-semibold tracking-wide border-b-2 transition-colors ${
-                activeTab === key
-                  ? "border-[#f4d787] text-[#f4d787]"
-                  : "border-transparent text-[#7e9985] hover:text-[#c5d36e]"
-              }`}
+              className={`historical-modal-tab ${activeTab === key ? "active" : ""}`}
             >
               {title}
             </button>
@@ -114,34 +107,31 @@ export function HistoricalArchiveModal({
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-4">
+        <div className="historical-modal-content">
           {/* DIARIES TAB */}
           {activeTab === "diaries" && (
-            <div className="space-y-4">
-              <div className="p-4 bg-[#14231b] border border-[#2b4133] rounded">
-                <span className="text-xs font-bold text-[#c5d36e]">
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <div className="historical-entry-card" style={{ borderColor: "var(--arg)" }}>
+                <span style={{ fontSize: "12px", fontWeight: "bold", color: "var(--arg)" }}>
                   {mission.title[locale]}
                 </span>
-                <p className="text-xs text-[#b8cbbd] mt-1 leading-relaxed">
+                <p style={{ margin: "4px 0 0", fontSize: "12px", color: "#b8cbbd", lineHeight: 1.5 }}>
                   {missionContext.narrativeSummary[locale]}
                 </p>
               </div>
 
               {missionContext.diaries.map((entry) => (
-                <div
-                  key={entry.id}
-                  className="p-5 bg-[#101b15] border border-[#213529] rounded space-y-3"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#f4d787]">
+                <div key={entry.id} className="historical-entry-card">
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: "13px", fontWeight: "bold", color: "var(--gold)" }}>
                       {entry.title[locale]}
                     </span>
-                    <span className="text-[10px] px-2 py-0.5 border border-[#3b5744] rounded text-[#8da594]">
+                    <span style={{ fontSize: "10px", padding: "2px 6px", border: "1px solid var(--line)", borderRadius: "2px", color: "var(--mist)" }}>
                       {entry.date} · {entry.side?.toUpperCase()}
                     </span>
                   </div>
 
-                  <p className="text-xs text-[#dce7dc] leading-relaxed">
+                  <p style={{ margin: "6px 0 0", fontSize: "12px", color: "var(--paper)", lineHeight: 1.55 }}>
                     {entry.body[locale]}
                   </p>
 
@@ -152,14 +142,14 @@ export function HistoricalArchiveModal({
                   )}
 
                   {entry.references.length > 0 && (
-                    <div className="pt-2 border-t border-[#1a2d24] flex flex-wrap gap-2 items-center">
-                      <span className="text-[10px] text-[#6d8874]">
+                    <div style={{ paddingTop: "8px", borderTop: "1px solid var(--line)", display: "flex", flexWrap: "wrap", gap: "6px", alignItems: "center" }}>
+                      <span style={{ fontSize: "10px", color: "var(--mist)" }}>
                         {labels.referenceCount}:
                       </span>
                       {entry.references.map((ref, idx) => (
                         <span
                           key={idx}
-                          className="text-[10px] bg-[#16271e] text-[#a9c1af] px-2 py-0.5 rounded border border-[#2b4133]"
+                          style={{ fontSize: "10px", background: "#ffffff0a", color: "#a9c1af", padding: "2px 6px", borderRadius: "2px", border: "1px solid var(--line)" }}
                         >
                           📄 {ref.sourceId} ({ref.locator})
                         </span>
@@ -173,33 +163,34 @@ export function HistoricalArchiveModal({
 
           {/* SOURCES TAB */}
           {activeTab === "sources" && (
-            <div className="space-y-3">
-              <div className="text-xs text-[#8da594] mb-2">
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <div style={{ fontSize: "12px", color: "var(--mist)", marginBottom: "4px" }}>
                 Fuentes historiográficas y fondos documentales indexados en el sistema:
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: "12px" }}>
                 {allSources.map((src) => (
                   <div
                     key={src.id}
-                    className="p-4 bg-[#101b15] border border-[#213529] rounded flex flex-col justify-between"
+                    className="historical-entry-card"
+                    style={{ justifyContent: "space-between" }}
                   >
                     <div>
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-[10px] font-bold text-[#f4d787]">
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
+                        <span style={{ fontSize: "11px", fontWeight: "bold", color: "var(--gold)" }}>
                           {src.id}
                         </span>
-                        <span className="text-[9px] bg-[#1d3527] text-[#c5d36e] px-1.5 py-0.5 rounded">
+                        <span style={{ fontSize: "9px", background: "#c5d36e22", color: "var(--arg)", padding: "2px 6px", borderRadius: "2px" }}>
                           {labels.verified}
                         </span>
                       </div>
-                      <div className="text-xs font-semibold text-[#dce7dc]">
+                      <div style={{ fontSize: "12px", fontWeight: "bold", color: "var(--paper)" }}>
                         {src.title}
                       </div>
-                      <div className="text-[11px] text-[#8da594] mt-0.5">
+                      <div style={{ fontSize: "11px", color: "var(--mist)", marginTop: "2px" }}>
                         🏛 {src.institution}
                       </div>
                       {src.scope && (
-                        <div className="text-[10px] text-[#6d8874] mt-2 italic">
+                        <div style={{ fontSize: "11px", color: "#8da594", marginTop: "6px", fontStyle: "italic" }}>
                           "{src.scope}"
                         </div>
                       )}
@@ -209,7 +200,7 @@ export function HistoricalArchiveModal({
                         href={src.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[10px] text-[#c5d36e] hover:underline mt-3 inline-block"
+                        style={{ fontSize: "11px", color: "var(--arg)", textDecoration: "none", marginTop: "10px", display: "inline-block" }}
                       >
                         ↗ Acceder al repositorio oficial
                       </a>
@@ -222,25 +213,25 @@ export function HistoricalArchiveModal({
 
           {/* TIMELINE TAB */}
           {activeTab === "timeline" && (
-            <div className="space-y-2">
-              <div className="text-xs text-[#8da594] mb-3">
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ fontSize: "12px", color: "var(--mist)", marginBottom: "6px" }}>
                 Cronología maestra día por día (2 de abril — 14 de junio de 1982):
               </div>
-              <div className="space-y-1.5 max-h-[500px] overflow-y-auto pr-2">
+              <div style={{ display: "flex", flexDirection: "column", gap: "6px", maxHeight: "480px", overflowY: "auto", paddingRight: "6px" }}>
                 {timeline.map((item) => (
                   <div
                     key={item.date}
-                    className="flex items-center justify-between p-2.5 bg-[#101b15] border border-[#1b2c22] rounded text-xs"
+                    style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 12px", background: "#101b15", border: "1px solid var(--line)", borderRadius: "3px", fontSize: "11px" }}
                   >
-                    <span className="font-bold text-[#f4d787] w-24">
+                    <span style={{ fontWeight: "bold", color: "var(--gold)", width: "90px", flexShrink: 0 }}>
                       {item.date}
                     </span>
-                    <span className="text-[#b8cbbd] flex-1 px-4">
+                    <span style={{ color: "#b8cbbd", flex: 1, padding: "0 12px" }}>
                       {item.eventIds.length > 0
                         ? item.eventIds.join(" · ")
                         : "Operaciones de patrullaje / enlace logístico"}
                     </span>
-                    <span className="text-[10px] text-[#6d8874] px-2 py-0.5 bg-[#0b140f] rounded border border-[#1b2c22]">
+                    <span style={{ fontSize: "10px", color: "var(--mist)", padding: "2px 6px", background: "#0b140f", border: "1px solid var(--line)", borderRadius: "2px", flexShrink: 0 }}>
                       {item.coverage}
                     </span>
                   </div>
@@ -251,30 +242,30 @@ export function HistoricalArchiveModal({
 
           {/* PRINCIPLES TAB */}
           {activeTab === "principles" && (
-            <div className="space-y-4 text-xs text-[#b8cbbd] leading-relaxed p-2">
-              <div className="p-4 bg-[#14231b] border border-[#2b4133] rounded space-y-2">
-                <h3 className="font-bold text-[#f4d787] text-sm">
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px", fontSize: "12px", color: "#b8cbbd", lineHeight: 1.55 }}>
+              <div className="historical-entry-card">
+                <h3 style={{ margin: "0 0 6px", fontWeight: "bold", color: "var(--gold)", fontSize: "14px" }}>
                   1. Inmutabilidad del Resultado Histórico
                 </h3>
-                <p>
+                <p style={{ margin: 0 }}>
                   El resultado histórico es inmutable y no se sobreescribe con las victorias o derrotas del jugador en la simulación táctica. Las partidas del jugador constituyen exploraciones alternativas que siempre se contrastan con el desenlace real de los hechos documentados.
                 </p>
               </div>
 
-              <div className="p-4 bg-[#14231b] border border-[#2b4133] rounded space-y-2">
-                <h3 className="font-bold text-[#f4d787] text-sm">
+              <div className="historical-entry-card">
+                <h3 style={{ margin: "0 0 6px", fontWeight: "bold", color: "var(--gold)", fontSize: "14px" }}>
                   2. Rigor y Atribución Cruzada
                 </h3>
-                <p>
+                <p style={{ margin: 0 }}>
                   Toda unidad militar, cota topográfica, alcance de tiro y suceso narrativo responde a partes oficiales y bibliografía académica verificada de ambos bandos (Ejército Argentino, Fuerza Aérea, Armada Argentina, Royal Navy, Parachute Regiment, Royal Marines).
                 </p>
               </div>
 
-              <div className="p-4 bg-[#14231b] border border-[#2b4133] rounded space-y-2">
-                <h3 className="font-bold text-[#f4d787] text-sm">
+              <div className="historical-entry-card">
+                <h3 style={{ margin: "0 0 6px", fontWeight: "bold", color: "var(--gold)", fontSize: "14px" }}>
                   3. Tratamiento Sobrio y Respeto a los Combatientes
                 </h3>
-                <p>
+                <p style={{ margin: 0 }}>
                   El juego rechaza la banalización o lenguaje deshumanizante. Se prioriza la comprensión táctica, el sacrificio de los combatientes en condiciones extremas y el testimonio histórico directo.
                 </p>
               </div>

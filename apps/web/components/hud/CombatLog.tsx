@@ -18,33 +18,28 @@ export function CombatLog({ state, locale, maxEntries = 6 }: CombatLogProps) {
   }, [state.eventLog, maxEntries]);
 
   return (
-    <div className="flex flex-col bg-[#0f1b15] border border-[#263c2e] rounded-lg p-3 space-y-2 font-mono text-xs text-[#dce7dc]">
-      <div className="flex items-center justify-between border-b border-[#213529] pb-1.5">
-        <span className="font-bold text-[#f4d787] text-xs">
+    <div className="combat-log-card">
+      <div className="combat-log-header">
+        <p className="eyebrow">
           📜 {t("ui.combatLog")}
-        </span>
-        <span className="text-[10px] text-[#6d8874]">
+        </p>
+        <span style={{ fontSize: "10px", color: "var(--mist)" }}>
           {state.eventLog.length} {locale === "es-AR" ? "registros" : "events"}
         </span>
       </div>
 
-      <div className="space-y-1.5 max-h-32 overflow-y-auto pr-1">
+      <div className="combat-log-list">
         {logs.length > 0 ? (
           logs.map((entry, idx) => (
-            <div
-              key={idx}
-              className="flex items-start space-x-2 text-[11px] p-1.5 bg-[#122018] rounded border border-[#1b2c22] leading-tight"
-            >
-              <span className="text-[10px] text-[#8da594] font-bold shrink-0 mt-0.5">
+            <div key={idx} className="combat-log-item">
+              <span className="combat-log-time">
                 {formatOperationalTime(Math.floor(entry.tick / TICK_RATE))}
               </span>
-              <span className="text-[#c5d36e] break-words flex-1">
-                {entry.message}
-              </span>
+              <span className="combat-log-msg">{entry.message}</span>
             </div>
           ))
         ) : (
-          <div className="text-[10px] text-[#6d8874] italic py-2 text-center">
+          <div style={{ fontSize: "11px", color: "var(--mist)", fontStyle: "italic", padding: "10px 0", textAlign: "center" }}>
             {locale === "es-AR"
               ? "Sin eventos de combate registrados."
               : "No combat events recorded yet."}

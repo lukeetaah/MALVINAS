@@ -46,51 +46,49 @@ export function CommandCard({
   const t = (key: any) => translateKey(key, locale);
 
   return (
-    <div className="flex flex-col bg-[#0f1b15] border border-[#263c2e] rounded-lg p-3 space-y-3 font-mono text-xs text-[#dce7dc]">
+    <div className="command-card">
       {/* Unit Status / Selection Header */}
-      <div className="border-b border-[#213529] pb-2">
+      <div className="command-unit-header">
         {hasSelection ? (
-          <div>
-            <div className="flex items-center justify-between">
-              <span className="font-bold text-[#f4d787] text-sm">
+          <div style={{ width: "100%" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <h3 className="command-unit-name">
                 {selectedUnits.length === 1
                   ? leadUnit.label
                   : `${selectedUnits.length} ${locale === "es-AR" ? "Unidades Seleccionadas" : "Units Selected"}`}
-              </span>
-              <span className="text-[10px] px-2 py-0.5 bg-[#1b2f23] rounded border border-[#3b5744] text-[#a0c1a8]">
+              </h3>
+              <span className="command-unit-kind-badge">
                 {translateUnitKind(leadUnit.kind, locale)}
               </span>
             </div>
 
             {selectedUnits.length === 1 && (
-              <div className="grid grid-cols-3 gap-2 mt-2 text-[11px]">
-                <div>
-                  <span className="text-[#7e9985] text-[10px]">INTEGRIDAD</span>
-                  <div className="w-full bg-[#16271e] h-2 rounded mt-0.5 overflow-hidden border border-[#2b4133]">
+              <div className="command-gauges-row">
+                <div className="gauge-box">
+                  <span className="gauge-label">INTEGRIDAD</span>
+                  <div className="gauge-bar-track">
                     <div
-                      className="h-full bg-[#48bb78] transition-all"
+                      className="gauge-bar-fill health"
                       style={{ width: `${Math.max(0, Math.min(100, leadUnit.health))}%` }}
                     />
                   </div>
-                  <span className="text-[10px]">{Math.round(leadUnit.health)}%</span>
+                  <span className="gauge-value">{Math.round(leadUnit.health)}%</span>
                 </div>
 
-                <div>
-                  <span className="text-[#7e9985] text-[10px]">MUNICIÓN</span>
-                  <div className="w-full bg-[#16271e] h-2 rounded mt-0.5 overflow-hidden border border-[#2b4133]">
+                <div className="gauge-box">
+                  <span className="gauge-label">MUNICIÓN</span>
+                  <div className="gauge-bar-track">
                     <div
-                      className={`h-full transition-all ${
-                        leadUnit.ammunition < 30 ? "bg-[#e53e3e]" : "bg-[#ecc94b]"
-                      }`}
+                      className={`gauge-bar-fill ${leadUnit.ammunition < 30 ? "ammo-low" : "ammo-good"}`}
                       style={{ width: `${Math.max(0, Math.min(100, leadUnit.ammunition))}%` }}
                     />
                   </div>
-                  <span className="text-[10px]">{leadUnit.ammunition}%</span>
+                  <span className="gauge-value">{leadUnit.ammunition}%</span>
                 </div>
 
-                <div>
-                  <span className="text-[#7e9985] text-[10px]">ESTADO</span>
-                  <div className="text-[10px] text-[#f4d787] mt-0.5 truncate">
+                <div className="gauge-box">
+                  <span className="gauge-label">ESTADO</span>
+                  <div style={{ fontSize: "11px", color: "var(--gold)", fontWeight: "bold", marginTop: "2px" }}>
                     {leadUnit.entrenched
                       ? "[ATRINCHERADO]"
                       : leadUnit.isSuppressed
@@ -103,12 +101,13 @@ export function CommandCard({
 
             {/* Multi-unit Selection Badges */}
             {selectedUnits.length > 1 && (
-              <div className="flex flex-wrap gap-1.5 mt-2 max-h-16 overflow-y-auto">
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "8px", maxHeight: "64px", overflowY: "auto" }}>
                 {selectedUnits.map((u) => (
                   <button
                     key={u.id}
                     onClick={() => onSelectSingleUnit(u.id)}
-                    className="text-[10px] px-2 py-1 bg-[#14231a] border border-[#2b4133] rounded hover:border-[#f4d787] text-[#c5d36e]"
+                    className="telemetry-btn"
+                    style={{ fontSize: "10px", padding: "4px 8px" }}
                   >
                     {u.label} ({Math.round(u.health)}%)
                   </button>
@@ -117,22 +116,18 @@ export function CommandCard({
             )}
           </div>
         ) : (
-          <div className="text-[#6d8874] italic py-2 text-center text-[11px]">
+          <div style={{ color: "var(--mist)", fontStyle: "italic", padding: "8px 0", textAlign: "center", width: "100%", fontSize: "11px" }}>
             {t("ui.noSelection")}
           </div>
         )}
       </div>
 
       {/* RTS Action Command Grid */}
-      <div className="grid grid-cols-4 gap-1.5">
+      <div className="command-actions-grid">
         <button
           onClick={onOrderMove}
           disabled={!hasSelection}
-          className={`px-2 py-2 text-center rounded border font-semibold text-[11px] transition-colors ${
-            activeMode === "move"
-              ? "bg-[#284834] border-[#f4d787] text-[#f4d787]"
-              : "bg-[#14231b] border-[#2b4133] text-[#c5d36e] hover:bg-[#1b2f23] disabled:opacity-30"
-          }`}
+          className={`command-action-btn ${activeMode === "move" ? "active" : ""}`}
         >
           {t("order.move")}
         </button>
@@ -140,11 +135,7 @@ export function CommandCard({
         <button
           onClick={onOrderAttack}
           disabled={!hasSelection}
-          className={`px-2 py-2 text-center rounded border font-semibold text-[11px] transition-colors ${
-            activeMode === "attack"
-              ? "bg-[#4a2424] border-[#e53e3e] text-[#feb2b2]"
-              : "bg-[#14231b] border-[#2b4133] text-[#c5d36e] hover:bg-[#1b2f23] disabled:opacity-30"
-          }`}
+          className={`command-action-btn ${activeMode === "fire" ? "active" : ""}`}
         >
           {t("order.attack")}
         </button>
@@ -152,7 +143,7 @@ export function CommandCard({
         <button
           onClick={onOrderHold}
           disabled={!hasSelection}
-          className="px-2 py-2 text-center rounded border font-semibold text-[11px] bg-[#14231b] border-[#2b4133] text-[#c5d36e] hover:bg-[#1b2f23] disabled:opacity-30"
+          className="command-action-btn"
         >
           {t("order.hold")}
         </button>
@@ -160,7 +151,7 @@ export function CommandCard({
         <button
           onClick={onOrderEntrench}
           disabled={!hasSelection}
-          className="px-2 py-2 text-center rounded border font-semibold text-[11px] bg-[#14231b] border-[#2b4133] text-[#c5d36e] hover:bg-[#1b2f23] disabled:opacity-30"
+          className="command-action-btn"
         >
           {t("order.entrench")}
         </button>
@@ -168,7 +159,7 @@ export function CommandCard({
         <button
           onClick={onOrderRetreat}
           disabled={!hasSelection}
-          className="px-2 py-2 text-center rounded border font-semibold text-[11px] bg-[#14231b] border-[#2b4133] text-[#f56565] hover:bg-[#2c1b1b] disabled:opacity-30"
+          className="command-action-btn retreat"
         >
           {t("order.retreat")}
         </button>
@@ -176,11 +167,7 @@ export function CommandCard({
         <button
           onClick={onOrderSupport}
           disabled={!hasSelection || !hasArtillery}
-          className={`px-2 py-2 text-center rounded border font-semibold text-[11px] transition-colors ${
-            activeMode === "support"
-              ? "bg-[#284834] border-[#f4d787] text-[#f4d787]"
-              : "bg-[#14231b] border-[#2b4133] text-[#c5d36e] hover:bg-[#1b2f23] disabled:opacity-30"
-          }`}
+          className={`command-action-btn ${activeMode === "support" ? "active" : ""}`}
         >
           {t("order.support")}
         </button>
@@ -188,7 +175,8 @@ export function CommandCard({
         <button
           onClick={onOrderResupply}
           disabled={!hasSelection}
-          className="col-span-2 px-2 py-2 text-center rounded border font-semibold text-[11px] bg-[#14231b] border-[#2b4133] text-[#ecc94b] hover:bg-[#232918] disabled:opacity-30"
+          className="command-action-btn"
+          style={{ color: "var(--gold)" }}
         >
           📦 {t("order.resupply")}
         </button>

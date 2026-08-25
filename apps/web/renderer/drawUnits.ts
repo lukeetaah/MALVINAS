@@ -171,6 +171,18 @@ export function drawUnits(
     ctx.fillRect(screenPos.x - barW / 2, barY, barW, barH);
     ctx.fillStyle = healthPercent > 0.5 ? "#93cf78" : healthPercent > 0.25 ? "#e6c47c" : "#df9075";
     ctx.fillRect(screenPos.x - barW / 2, barY, barW * healthPercent, barH);
+
+    // Ammo bar (thin blue/amber strip below health if ammo < 50%)
+    if (unit.maxAmmunition && unit.maxAmmunition > 0) {
+      const ammoPercent = Math.max(0, Math.min(1, unit.ammunition / unit.maxAmmunition));
+      if (ammoPercent < 0.5) {
+        const ammoY = barY + barH + 1;
+        ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+        ctx.fillRect(screenPos.x - barW / 2, ammoY, barW, 2);
+        ctx.fillStyle = ammoPercent > 0.2 ? "#e6c47c" : "#df4a32";
+        ctx.fillRect(screenPos.x - barW / 2, ammoY, barW * ammoPercent, 2);
+      }
+    }
     ctx.restore();
 
     // 5. Suppression indicator (orange bar under health if suppressed)

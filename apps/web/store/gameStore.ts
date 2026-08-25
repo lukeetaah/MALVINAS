@@ -250,7 +250,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     gameLoop?.stop();
     pendingCommands.length = 0;
     commandSequence = 0;
-    set({ running: false, screen: "briefing" });
+    set({ running: false, screen: "menu" });
   },
 
   returnToMenu: () => {

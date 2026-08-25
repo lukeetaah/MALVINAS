@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HISTORICAL_MISSIONS } from "@malvinas/simulation";
+import { HISTORICAL_MISSIONS, type Side } from "@malvinas/simulation";
 import { useGameStore } from "@/store/gameStore";
 import { TacticalAudioManager } from "@/audio/audioManager";
 import { HistoricalArchiveModal } from "./HistoricalArchiveModal";
@@ -10,10 +10,12 @@ export function MainMenu() {
   const mission = useGameStore((s) => s.mission);
   const locale = useGameStore((s) => s.locale);
   const playerSide = useGameStore((s) => s.playerSide);
+  const planId = useGameStore((s) => s.planId);
   const selectMission = useGameStore((s) => s.selectMission);
   const selectSide = useGameStore((s) => s.selectSide);
+  const setPlanId = useGameStore((s) => s.setPlanId);
   const toggleLocale = useGameStore((s) => s.toggleLocale);
-  const openBriefing = useGameStore((s) => s.openBriefing);
+  const launchMission = useGameStore((s) => s.launchMission);
 
   const [isArchiveOpen, setIsArchiveOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -25,10 +27,10 @@ export function MainMenu() {
     setIsMuted(muted);
   };
 
-  const handleStartMission = (missionId: string) => {
+  const handleLaunchCombat = () => {
     TacticalAudioManager.getInstance().init();
     TacticalAudioManager.getInstance().playRadioChirp();
-    openBriefing(missionId);
+    launchMission();
   };
 
   const text = {
@@ -38,10 +40,11 @@ export function MainMenu() {
       prologueTitle: "PARTE HISTÓRICO GENERAL — ABRIL / JUNIO DE 1982",
       prologueBody:
         "El 2 de abril de 1982, las Fuerzas Armadas argentinas recuperan las Islas Malvinas y Georgias del Sur. El gobierno británico responde movilizando la Task Force 317 a lo largo de 12.000 kilómetros de océano. En un teatro hostil de turberas, temperaturas bajo cero y fuertes vientos australes, ambas fuerzas se enfrentaron en combates aeronavales y terrestres decisivos. Tomá el mando táctico de las operaciones con absoluto rigor historiográfico.",
-      selectTheatre: "SELECCIONÁ EL TEATRO DE OPERACIONES",
-      selectSide: "SELECCIONÁ TU BANDO DE MANDO",
-      launchPrompt: "INICIAR PLANIFICACIÓN DE COMBATE",
-      archiveBtn: "ARCHIVO HISTÓRICO Y FUENTES PRIMARIAS",
+      step1: "1. TEATRO DE OPERACIONES",
+      step2: "2. BANDO DE MANDO",
+      step3: "3. PLAN OPERATIVO INICIAL",
+      launchPrompt: "DESPLEGAR FUERZAS EN COMBATE",
+      archiveBtn: "ARCHIVO HISTÓRICO Y FUENTES",
       argForces: "Fuerzas Armadas Argentinas",
       argDesc: "Ejército Argentino, Fuerza Aérea y Armada / BIM 5",
       ukForces: "British Task Force 317",
@@ -49,7 +52,8 @@ export function MainMenu() {
       dateLabel: "FECHA",
       forcesLabel: "FUERZAS",
       weatherLabel: "CLIMA",
-      readiness: "ESTADO OPERATIVO: LISTO",
+      readiness: "ESTADO OPERATIVO: LISTO PARA DESPLIEGUE",
+      sourceCitation: "Simulación histórica basada en partes de guerra oficiales, cartografía del IGM y testimonios de combatientes.",
     },
     "en-GB": {
       title: "1982: FALKLANDS",
@@ -57,10 +61,11 @@ export function MainMenu() {
       prologueTitle: "HISTORICAL CONTEXT BRIEFING — APRIL / JUNE 1982",
       prologueBody:
         "On 2 April 1982, Argentine forces established control over the Falkland Islands and South Georgia. Great Britain deployed Task Force 317 across 8,000 miles of ocean. In a severe environment of peat bogs, sub-zero conditions and Antarctic gales, both forces engaged in decisive air-naval and ground operations. Take tactical command with strict documentary rigor.",
-      selectTheatre: "SELECT THEATRE OF OPERATIONS",
-      selectSide: "SELECT COMMAND FACTION",
-      launchPrompt: "COMMENCE TACTICAL PLANNING",
-      archiveBtn: "HISTORICAL ARCHIVE & PRIMARY SOURCES",
+      step1: "1. THEATRE OF OPERATIONS",
+      step2: "2. COMMAND FACTION",
+      step3: "3. INITIAL TACTICAL PLAN",
+      launchPrompt: "DEPLOY FORCES INTO COMBAT",
+      archiveBtn: "HISTORICAL ARCHIVE & SOURCES",
       argForces: "Argentine Armed Forces",
       argDesc: "Argentine Army, Air Force, Navy and 5th Marine Battalion",
       ukForces: "British Task Force 317",
@@ -68,9 +73,13 @@ export function MainMenu() {
       dateLabel: "DATE",
       forcesLabel: "FORCES",
       weatherLabel: "WEATHER",
-      readiness: "OPERATIONAL READINESS: READY",
+      readiness: "OPERATIONAL READINESS: READY FOR DEPLOYMENT",
+      sourceCitation: "Historical simulation based on official military dispatches, IGM cartography and veteran accounts.",
     },
   }[locale];
+
+  const availablePlans = mission.briefing.plans.filter((p) => p.side === playerSide);
+  const currentPlan = availablePlans.find((p) => p.id === planId) ?? availablePlans[0];
 
   return (
     <div className="main-menu-shell">
@@ -111,12 +120,12 @@ export function MainMenu() {
         </div>
       </div>
 
-      {/* Main Selection Grid */}
+      {/* Main Selection Workflow */}
       <div className="main-menu-selection-section">
-        {/* Theatre of Operations (Missions) */}
+        {/* Step 1: Theatre of Operations */}
         <div>
           <p className="eyebrow" style={{ marginBottom: "12px" }}>
-            1. {text.selectTheatre}
+            {text.step1}
           </p>
           <div className="mission-cards-grid">
             {HISTORICAL_MISSIONS.map((m) => {
@@ -137,7 +146,7 @@ export function MainMenu() {
                   <p className="mission-card-summary">{m.briefing.situation[locale]}</p>
                   <div className="mission-card-footer">
                     <span>🗺️ {m.map.width}x{m.map.height}m</span>
-                    <span>📍 {m.map.features.length} Sectores</span>
+                    <span>📍 {m.map.features.length} Sectores clave</span>
                   </div>
                 </div>
               );
@@ -145,35 +154,67 @@ export function MainMenu() {
           </div>
         </div>
 
-        {/* Side Selection & Launch Command */}
-        <div style={{ marginTop: "24px" }}>
+        {/* Step 2: Faction / Side Selection */}
+        <div style={{ marginTop: "28px" }}>
           <p className="eyebrow" style={{ marginBottom: "12px" }}>
-            2. {text.selectSide}
+            {text.step2}
           </p>
           <div className="side-cards-grid">
             <div
-              onClick={() => selectSide("argentina")}
+              onClick={() => {
+                selectSide("argentina");
+                const firstArgPlan = mission.briefing.plans.find((p) => p.side === "argentina");
+                if (firstArgPlan) setPlanId(firstArgPlan.id);
+              }}
               className={`menu-side-card argentina ${playerSide === "argentina" ? "selected" : ""}`}
             >
               <div className="side-card-flag">🇦🇷</div>
               <div className="side-card-info">
                 <h3>{text.argForces}</h3>
                 <p>{text.argDesc}</p>
-                <span className="side-motto">"Defensa en profundidad y cotas dominantes"</span>
+                <span className="side-motto">"Defensa en profundidad, apoyo de artillería y posiciones en cotas dominantes"</span>
               </div>
             </div>
 
             <div
-              onClick={() => selectSide("britain")}
+              onClick={() => {
+                selectSide("britain");
+                const firstUkPlan = mission.briefing.plans.find((p) => p.side === "britain");
+                if (firstUkPlan) setPlanId(firstUkPlan.id);
+              }}
               className={`menu-side-card britain ${playerSide === "britain" ? "selected" : ""}`}
             >
               <div className="side-card-flag">🇬🇧</div>
               <div className="side-card-info">
                 <h3>{text.ukForces}</h3>
                 <p>{text.ukDesc}</p>
-                <span className="side-motto">"Asalto anfibio, apoyo naval y maniobra nocturna"</span>
+                <span className="side-motto">"Asalto anfibio, apoyo de fuego naval y maniobra nocturna de infantería"</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Step 3: Tactical Plan Selection */}
+        <div style={{ marginTop: "28px" }}>
+          <p className="eyebrow" style={{ marginBottom: "12px" }}>
+            {text.step3}
+          </p>
+          <div className="plan-options" style={{ marginTop: "0" }}>
+            {availablePlans.map((plan) => {
+              const isSelected = (currentPlan?.id ?? planId) === plan.id;
+              return (
+                <div
+                  key={plan.id}
+                  onClick={() => setPlanId(plan.id)}
+                  className={`plan-choice ${isSelected ? "active" : ""}`}
+                  style={{ cursor: "pointer" }}
+                >
+                  <span style={{ fontWeight: "bold" }}>{plan.name[locale]}</span>
+                  <strong style={{ color: "var(--gold)" }}>{plan.effect[locale]}</strong>
+                  <small style={{ color: "var(--mist)" }}>{plan.description[locale]}</small>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -181,14 +222,21 @@ export function MainMenu() {
         <div className="menu-launch-container">
           <div className="launch-summary">
             <span>{text.readiness}</span>
-            <strong>{mission.title[locale]} · {playerSide === "argentina" ? "🇦🇷 ARG" : "🇬🇧 UK"}</strong>
+            <strong>
+              {mission.title[locale]} · {playerSide === "argentina" ? "🇦🇷 FUERZAS ARGENTINAS" : "🇬🇧 TASK FORCE"} · {currentPlan ? currentPlan.name[locale] : ""}
+            </strong>
           </div>
           <button
-            onClick={() => handleStartMission(mission.id)}
+            onClick={handleLaunchCombat}
             className="menu-launch-button"
           >
             {text.launchPrompt} <b>→</b>
           </button>
+        </div>
+
+        {/* Citation Footer */}
+        <div style={{ marginTop: "24px", textAlign: "center", color: "var(--mist)", fontSize: "11px" }}>
+          <p>{text.sourceCitation}</p>
         </div>
       </div>
 

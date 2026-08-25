@@ -76,7 +76,7 @@ export function TelemetryBar({
       {/* Left: Mission title and return */}
       <div className="telemetry-left">
         <button onClick={onReturnToBriefing} className="telemetry-btn">
-          ← {locale === "es-AR" ? "Briefing" : "Briefing"}
+          ← {locale === "es-AR" ? "Menú Principal" : "Main Menu"}
         </button>
         <div>
           <h2 className="telemetry-title">{mission.title[locale]}</h2>

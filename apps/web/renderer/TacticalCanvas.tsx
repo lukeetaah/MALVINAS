@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type MouseEvent, type WheelEvent } from "react";
+import React, { useEffect, useRef, useState, type MouseEvent, type WheelEvent } from "react";
 import {
   type MatchState,
   type MissionDefinition,
@@ -446,6 +446,140 @@ export function TacticalCanvas({
     }
   };
 
+  // ── Touch Support (Mobile) ──────────────────────────────────────────────
+  const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
+  const pinchDistRef = useRef<number>(0);
+  const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+
+    if (e.touches.length === 2) {
+      // Pinch start
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      pinchDistRef.current = Math.hypot(dx, dy);
+      if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+      return;
+    }
+
+    if (e.touches.length === 1) {
+      const touch = e.touches[0];
+      touchStartRef.current = {
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top,
+        time: Date.now(),
+      };
+      // Long press timer (500ms) for attack command
+      longPressTimerRef.current = setTimeout(() => {
+        if (!touchStartRef.current || !canvas) return;
+        const camera = cameraRef.current;
+        const worldClick = camera.screenToWorld(
+          { x: touchStartRef.current.x, y: touchStartRef.current.y },
+          canvas.clientWidth,
+          canvas.clientHeight,
+        );
+        if (state.selectedUnitIds.length > 0) {
+          const detectedEnemyIds = state.detectedEnemyUnitIds?.[playerSide] ?? [];
+          const clickedEnemy = state.units.find(
+            (u) =>
+              u.alive &&
+              u.side !== playerSide &&
+              detectedEnemyIds.includes(u.id) &&
+              Math.hypot(u.position.x - worldClick.x, u.position.y - worldClick.y) <= 3.0,
+          );
+          if (clickedEnemy) {
+            enqueueCommand({ type: "ATTACK", unitIds: state.selectedUnitIds, targetUnitIds: [clickedEnemy.id] });
+          }
+        }
+        touchStartRef.current = null;
+      }, 500);
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    if (e.touches.length === 2) {
+      // Pinch zoom
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      const dist = Math.hypot(dx, dy);
+      if (pinchDistRef.current > 0) {
+        const factor = dist / pinchDistRef.current;
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const rect = canvas.getBoundingClientRect();
+        cameraRef.current.zoomAtScreenPoint(
+          factor,
+          { x: midX - rect.left, y: midY - rect.top },
+          canvas.clientWidth,
+          canvas.clientHeight,
+        );
+      }
+      pinchDistRef.current = dist;
+      return;
+    }
+
+    if (e.touches.length === 1 && touchStartRef.current) {
+      // Pan
+      const rect = canvas.getBoundingClientRect();
+      const x = e.touches[0].clientX - rect.left;
+      const y = e.touches[0].clientY - rect.top;
+      const dx = x - touchStartRef.current.x;
+      const dy = y - touchStartRef.current.y;
+      cameraRef.current.panByScreenDelta(dx, dy);
+      touchStartRef.current = { x, y, time: touchStartRef.current.time };
+    }
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+    const canvas = canvasRef.current;
+    if (!canvas || !touchStartRef.current) { touchStartRef.current = null; return; }
+
+    const elapsed = Date.now() - touchStartRef.current.time;
+    // Quick tap = select or move
+    if (elapsed < 300) {
+      const camera = cameraRef.current;
+      const worldClick = camera.screenToWorld(
+        { x: touchStartRef.current.x, y: touchStartRef.current.y },
+        canvas.clientWidth,
+        canvas.clientHeight,
+      );
+
+      const detectedEnemyIds = state.detectedEnemyUnitIds?.[playerSide] ?? [];
+      const clickedUnit = state.units.find(
+        (u) =>
+          u.alive &&
+          (u.side === playerSide || detectedEnemyIds.includes(u.id)) &&
+          Math.hypot(u.position.x - worldClick.x, u.position.y - worldClick.y) <= 3.0,
+      );
+
+      if (clickedUnit) {
+        if (clickedUnit.side === playerSide) {
+          selectUnits([clickedUnit.id]);
+        } else if (state.selectedUnitIds.length > 0) {
+          enqueueCommand({ type: "ATTACK", unitIds: state.selectedUnitIds, targetUnitIds: [clickedUnit.id] });
+        }
+      } else if (state.selectedUnitIds.length > 0) {
+        enqueueCommand({
+          type: "MOVE",
+          unitIds: state.selectedUnitIds,
+          targetPosition: { x: Math.max(0, Math.min(mapWidth, worldClick.x)), y: Math.max(0, Math.min(mapHeight, worldClick.y)) },
+        });
+      } else {
+        clearSelection();
+      }
+    }
+    touchStartRef.current = null;
+    pinchDistRef.current = 0;
+  };
+
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <canvas
@@ -456,6 +590,7 @@ export function TacticalCanvas({
           height: "100%",
           display: "block",
           cursor: isPanningRef.current ? "grab" : "crosshair",
+          touchAction: "none",
         }}
         onWheel={handleWheel}
         onMouseDown={handleMouseDown}
@@ -463,6 +598,9 @@ export function TacticalCanvas({
         onMouseUp={handleMouseUp}
         onDoubleClick={handleDoubleClick}
         onContextMenu={handleContextMenu}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         role="img"
         aria-label="Tactical map canvas"
       />

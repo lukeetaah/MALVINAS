@@ -16,7 +16,7 @@ import {
 } from "@malvinas/simulation";
 
 type Locale = "es-AR" | "en-GB";
-type Screen = "briefing" | "battle";
+type Screen = "menu" | "briefing" | "battle";
 type CommandMode = "move" | "fire" | "support";
 
 const OPPONENT: Record<Side, Side> = {
@@ -69,6 +69,8 @@ interface GameStore {
   launchMission: () => void;
   toggleRunning: () => void;
   returnToBriefing: () => void;
+  returnToMenu: () => void;
+  openBriefing: (missionId?: string) => void;
   setDesyncDetected: (desync: boolean) => void;
 }
 
@@ -79,7 +81,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
   mission: GOOSE_GREEN_MISSION,
   result: null,
   locale: "es-AR",
-  screen: "briefing",
+  screen: "menu",
   mode: "move",
   playerSide: "argentina",
   planId: "argentina-layered-defense",
@@ -249,5 +251,19 @@ export const useGameStore = create<GameStore>((set, get) => ({
     pendingCommands.length = 0;
     commandSequence = 0;
     set({ running: false, screen: "briefing" });
+  },
+
+  returnToMenu: () => {
+    gameLoop?.stop();
+    pendingCommands.length = 0;
+    commandSequence = 0;
+    set({ running: false, screen: "menu" });
+  },
+
+  openBriefing: (missionId?: string) => {
+    if (missionId) {
+      get().selectMission(missionId);
+    }
+    set({ screen: "briefing" });
   },
 }));

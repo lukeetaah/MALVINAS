@@ -13,6 +13,7 @@ import {
 import { useGameStore } from "@/store/gameStore";
 import { TacticalCanvas } from "@/renderer/TacticalCanvas";
 import { HistoricalArchiveModal } from "./HistoricalArchiveModal";
+import { MainMenu } from "./MainMenu";
 import { TelemetryBar } from "./hud/TelemetryBar";
 import { Minimap } from "./hud/Minimap";
 import { CommandCard } from "./hud/CommandCard";
@@ -171,6 +172,10 @@ export default function MissionPrototype() {
       TacticalAudioManager.getInstance().stopAtmosphere();
     }
   }, [running, screen, state.weather?.type]);
+
+  if (screen === "menu") {
+    return <MainMenu />;
+  }
 
   if (screen === "briefing") {
     return (

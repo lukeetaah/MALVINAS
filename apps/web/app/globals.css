@@ -340,9 +340,258 @@ button { font:inherit; }
   font-size: 16px;
 }
 
-.command-shell { min-height:100vh; padding:18px clamp(12px,2.4vw,38px) 34px; background:radial-gradient(circle at 50% -10%,#334b3d 0,transparent 32%),#0b1210; }
-.command-header { max-width:1660px; margin:0 auto; padding-bottom:16px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-bottom:1px solid var(--line); }.command-title { display:flex; align-items:center; gap:13px; }.back-button { width:34px; height:34px; font-size:17px; }.command-title p { margin:0 0 4px; color:var(--gold); font-size:9px; font-weight:700; letter-spacing:.15em; }.command-title h1 { margin:0; font-family:Georgia,serif; font-size:clamp(22px,3vw,34px); font-weight:400; }.command-status { display:flex; align-items:center; gap:9px; color:var(--mist); font-size:10px; letter-spacing:.12em; }.command-status button:not(.language-switch) { border:1px solid var(--line); background:#ffffff0a; color:var(--paper); padding:8px 10px; cursor:pointer; font-size:11px; }.command-status button:disabled { opacity:.45; cursor:not-allowed; }.live-dot { width:7px; height:7px; border-radius:50%; background:#93cf78; box-shadow:0 0 10px #93cf78; }.live-dot.ended { background:var(--uk); box-shadow:none; }
-.command-strip { max-width:1660px; margin:0 auto; padding:12px 0; display:grid; grid-template-columns:repeat(4,minmax(96px,1fr)) 2fr; gap:10px; border-bottom:1px solid var(--line); }.command-strip div { padding-right:12px; border-right:1px solid var(--line); }.command-strip span { display:block; color:var(--mist); font-size:9px; letter-spacing:.13em; text-transform:uppercase; }.command-strip strong { display:block; margin-top:4px; font-size:15px; font-weight:400; }.command-strip em { color:var(--mist); font-size:10px; font-style:normal; }.command-strip p { align-self:center; justify-self:end; margin:0; color:var(--mist); font-size:10px; text-align:right; }
+.command-shell {
+  min-height: 100vh;
+  padding: 12px clamp(12px, 2vw, 24px) 24px;
+  background: radial-gradient(circle at 50% -10%, #1e3328 0, transparent 32%), #080f0c;
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 3-COLUMN TACTICAL BATTLE LAYOUT ───────────────────────────────── */
+.command-grid {
+  display: grid;
+  grid-template-columns: 290px 1fr 270px;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+  max-width: 1720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.left-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.map-console {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  height: 100%;
+}
+
+.map-frame {
+  flex: 1;
+  min-height: 380px;
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #070e0b;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 30px #000000aa;
+}
+
+.map-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: #111d18;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.map-key {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--mist);
+  letter-spacing: 0.05em;
+}
+.map-key i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 1px;
+}
+.map-key i.argentina { background: var(--arg); }
+.map-key i.britain { background: var(--uk); }
+.map-key i.objective { background: var(--gold); }
+
+.right-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* ── SIDEBAR RAIL CARDS ────────────────────────────────────────────── */
+.rail-card {
+  background: linear-gradient(135deg, #111d18f0 0%, #0c1611f0 100%);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 10px #00000066;
+}
+
+.objectives-card h2, .narrative-card h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--paper);
+  line-height: 1.35;
+}
+
+.objective-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 3px;
+  font-size: 11px;
+}
+.objective-row i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--uk);
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.objective-row i.done {
+  background: var(--arg);
+  box-shadow: 0 0 6px var(--arg);
+}
+.objective-row span {
+  flex: 1;
+  color: #cdd6cb;
+}
+.objective-row b {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.narrative-card p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #a6b5aa;
+}
+.narrative-card small {
+  color: var(--mist);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.roster-unit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #0d1713;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--paper);
+  cursor: pointer;
+  text-align: left;
+  transition: 0.15s ease;
+}
+.roster-unit:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: #14221c;
+}
+.roster-unit.selected {
+  border-color: var(--gold);
+  background: #182820;
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+.roster-unit i {
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 4px;
+  border-radius: 2px;
+  background: #ffffff12;
+  color: var(--gold);
+}
+.roster-unit span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.roster-unit strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+.roster-unit small {
+  font-size: 9px;
+  color: var(--mist);
+}
+.roster-unit b {
+  font-size: 12px;
+  color: var(--gold);
+}
+
+.archive-card p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #a6b5aa;
+}
+.archive-card span {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.after-action {
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #15241e, #0e1713);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  text-align: center;
+}
+.after-action h2 {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  margin: 6px 0 10px;
+  color: var(--paper);
+}
+.after-action p {
+  margin: 0 0 16px;
+  color: #b0c0b3;
+  font-size: 13px;
+}
+.after-action button {
+  background: var(--gold);
+  color: #111d18;
+  border: 0;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 /* ── TACTICAL HUD & TELEMETRY MODULES ──────────────────────────────────── */
 .telemetry-bar {
   max-width: 1660px;

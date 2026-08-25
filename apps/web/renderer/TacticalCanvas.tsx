@@ -581,7 +581,7 @@ export function TacticalCanvas({
   };
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div style={{ position: "relative", width: "100%", height: "100%", flex: 1, minHeight: 0 }}>
       <canvas
         ref={canvasRef}
         className="battle-map"

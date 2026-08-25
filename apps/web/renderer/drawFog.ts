@@ -7,7 +7,7 @@ import {
 import type { TacticalCamera } from "./camera";
 
 /**
- * Draws the Fog of War shroud over the Canvas based on player visibility.
+ * Draws the Fog of War shroud over the Canvas with smooth military radar shading.
  */
 export function drawFog(
   ctx: CanvasRenderingContext2D,
@@ -32,24 +32,28 @@ export function drawFog(
   const startY = Math.max(0, Math.floor(topLeftWorld.y));
   const endY = Math.min(fog.height, Math.ceil(botRightWorld.y) + 1);
 
+  ctx.save();
+
   for (let y = startY; y < endY; y++) {
     for (let x = startX; x < endX; x++) {
       const idx = y * fog.width + x;
       const vis = fog.visibility[idx] ?? FOG_UNEXPLORED;
 
-      if (vis === FOG_VISIBLE) continue; // Fully clear in real-time view
+      if (vis === FOG_VISIBLE) continue; // Real-time visible
 
       const screenPos = camera.worldToScreen({ x, y }, canvasWidth, canvasHeight);
 
       if (vis === FOG_UNEXPLORED) {
-        // Full black pitch darkness
-        ctx.fillStyle = "#0c1511";
-        ctx.fillRect(screenPos.x, screenPos.y, Math.ceil(cellW), Math.ceil(cellH));
+        // Deep tactical blackout
+        ctx.fillStyle = "#070e0b";
+        ctx.fillRect(screenPos.x, screenPos.y, Math.ceil(cellW) + 0.5, Math.ceil(cellH) + 0.5);
       } else if (vis === FOG_EXPLORED) {
-        // Semi-transparent shroud over previously scouted territory
-        ctx.fillStyle = "rgba(12, 21, 17, 0.52)";
-        ctx.fillRect(screenPos.x, screenPos.y, Math.ceil(cellW), Math.ceil(cellH));
+        // Semi-transparent tactical shroud over scouted sector
+        ctx.fillStyle = "rgba(7, 14, 11, 0.48)";
+        ctx.fillRect(screenPos.x, screenPos.y, Math.ceil(cellW) + 0.5, Math.ceil(cellH) + 0.5);
       }
     }
   }
+
+  ctx.restore();
 }

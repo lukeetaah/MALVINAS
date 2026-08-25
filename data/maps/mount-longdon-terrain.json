@@ -1,0 +1,66 @@
+{
+  "id": "mount-longdon-terrain-v1",
+  "name": {
+    "es-AR": "Monte Longdon (Topografía 1982)",
+    "en-GB": "Mount Longdon (1982 Topography)"
+  },
+  "width": 100,
+  "height": 60,
+  "cellResolution": 25,
+  "elevationScale": "meters",
+  "zones": [
+    {
+      "name": "Northern Bog Approaches",
+      "type": "peat-bog",
+      "elevation": 20,
+      "center": { "x": 50, "y": 10 },
+      "radius": 15
+    },
+    {
+      "name": "Mount Longdon Western Crest (Summit)",
+      "type": "rocky-ridge",
+      "elevation": 186,
+      "center": { "x": 38, "y": 28 },
+      "radius": 8
+    },
+    {
+      "name": "Mount Longdon Eastern Crest",
+      "type": "rocky-ridge",
+      "elevation": 172,
+      "center": { "x": 52, "y": 30 },
+      "radius": 9
+    },
+    {
+      "name": "Baldini Forward Outpost / Subsector B",
+      "type": "rocky-ridge",
+      "elevation": 155,
+      "center": { "x": 32, "y": 32 },
+      "radius": 5
+    },
+    {
+      "name": "Southern Valley / Murrell Stream Lowlands",
+      "type": "peat-bog",
+      "elevation": 25,
+      "center": { "x": 45, "y": 50 },
+      "radius": 14
+    },
+    {
+      "name": "Murrell Bridge Access Track",
+      "type": "road",
+      "elevation": 30,
+      "waypoints": [
+        { "x": 90, "y": 35 },
+        { "x": 75, "y": 36 },
+        { "x": 65, "y": 38 },
+        { "x": 58, "y": 42 }
+      ]
+    },
+    {
+      "name": "Command Post Bunkers",
+      "type": "settlement",
+      "elevation": 170,
+      "center": { "x": 48, "y": 30 },
+      "radius": 4
+    }
+  ]
+}

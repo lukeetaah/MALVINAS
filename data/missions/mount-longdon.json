@@ -1,0 +1,122 @@
+{
+  "id": "mount-longdon-1982",
+  "title": {
+    "es-AR": "Monte Longdon — Asalto Nocturno",
+    "en-GB": "Mount Longdon — Night Assault"
+  },
+  "dateStart": "1982-06-11",
+  "dateEnd": "1982-06-12",
+  "tickRate": 10,
+  "timeLimitSeconds": 240,
+  "map": {
+    "width": 100,
+    "height": 60,
+    "features": [
+      {"id":"longdon-summit","kind":"position","position":{"x":38,"y":28},"radius":7,"cover":0.45},
+      {"id":"longdon-east-crest","kind":"position","position":{"x":52,"y":30},"radius":6,"cover":0.4},
+      {"id":"baldini-outpost","kind":"position","position":{"x":32,"y":32},"radius":5,"cover":0.35},
+      {"id":"command-bunkers","kind":"settlement","position":{"x":48,"y":30},"radius":5,"cover":0.5}
+    ]
+  },
+  "initialUnits": [
+    {"id":"ri7-baldini","side":"argentina","kind":"infantry","label":"RI 7 · Sec. Baldini (Cresta Oeste)","position":{"x":33,"y":31},"health":100,"morale":0.88,"ammunition":70,"fuel":1,"speed":4.0,"attackRange":8,"damage":11,"entrenched":true,"stealthRating":0.45},
+    {"id":"ri7-browning","side":"argentina","kind":"support-weapon","label":"RI 7 · Ametralladoras 12.7 mm","position":{"x":39,"y":27},"health":100,"morale":0.85,"ammunition":80,"fuel":1,"speed":2.5,"attackRange":14,"damage":16,"entrenched":true},
+    {"id":"ri7-mortars","side":"argentina","kind":"artillery","label":"RI 7 · Morteros 81 mm","position":{"x":46,"y":29},"health":100,"morale":0.82,"ammunition":40,"fuel":1,"speed":2.0,"attackRange":20,"damage":22},
+    {"id":"ri7-east-defense","side":"argentina","kind":"infantry","label":"RI 7 · Sección Cresta Este","position":{"x":53,"y":30},"health":100,"morale":0.84,"ammunition":65,"fuel":1,"speed":4.0,"attackRange":8,"damage":11,"entrenched":true},
+    {"id":"3para-b-coy","side":"britain","kind":"infantry","label":"3 PARA · B Company (Asalto Oeste)","position":{"x":82,"y":24},"health":100,"morale":0.92,"ammunition":90,"fuel":1,"speed":4.5,"attackRange":8,"damage":12},
+    {"id":"3para-a-coy","side":"britain","kind":"infantry","label":"3 PARA · A Company (Flanco Este)","position":{"x":84,"y":36},"health":100,"morale":0.90,"ammunition":90,"fuel":1,"speed":4.5,"attackRange":8,"damage":12},
+    {"id":"3para-milan","side":"britain","kind":"support-weapon","label":"3 PARA · Sección Misiles MILAN","position":{"x":88,"y":30},"health":100,"morale":0.88,"ammunition":40,"fuel":1,"speed":3.0,"attackRange":16,"damage":20},
+    {"id":"3para-mortars","side":"britain","kind":"artillery","label":"3 PARA · Batería Morteros 81 mm","position":{"x":92,"y":28},"health":100,"morale":0.86,"ammunition":45,"fuel":1,"speed":2.0,"attackRange":22,"damage":21}
+  ],
+  "objectives": [
+    {"id":"argentina-hold-summit","side":"argentina","kind":"hold","featureId":"longdon-summit"},
+    {"id":"argentina-hold-east","side":"argentina","kind":"hold","featureId":"longdon-east-crest"},
+    {"id":"britain-capture-summit","side":"britain","kind":"capture","featureId":"longdon-summit"},
+    {"id":"britain-capture-east","side":"britain","kind":"capture","featureId":"longdon-east-crest"}
+  ],
+  "briefing": {
+    "theatre": {
+      "es-AR": "Monte Longdon · Sector Defensivo Puerto Argentino · Isla Soledad",
+      "en-GB": "Mount Longdon · Stanley Defensive Sector · East Falkland"
+    },
+    "situation": {
+      "es-AR": "En la noche del 11 al 12 de junio de 1982, el 3 PARA británico lanzó un asalto nocturno sobre las posiciones atrincheradas del Regimiento de Infantería 7 en la cresta rocosa de Monte Longdon. El combate se libró a corta distancia entre las rocas, con intenso fuego de ametralladoras pesadas, morteros y armas antitanque.",
+      "en-GB": "On the night of 11-12 June 1982, British 3 PARA launched a night assault against entrenched positions of the Argentine 7th Infantry Regiment along the rocky ridge of Mount Longdon. The battle was fought at close quarters among stone runs with heavy machine gun, mortar, and anti-tank fire."
+    },
+    "historicalFrame": {
+      "es-AR": "Tras diez horas de feroz combate nocturno, las fuerzas británicas capturaron la cresta de Monte Longdon, constituyendo una de las batallas más duras y sangrientas de la guerra.",
+      "en-GB": "After ten hours of fierce night fighting, British forces captured the Mount Longdon ridge in one of the most intense battles of the war."
+    },
+    "playerObjective": {
+      "argentina": {
+        "es-AR": "Defendé las crestas oeste y este de Monte Longdon aprovechando las cotas altas y trincheras de piedra.",
+        "en-GB": "Defend the west and east crests of Mount Longdon utilising high ground and stone trenches."
+      },
+      "britain": {
+        "es-AR": "Asaltá y capturá la cumbre y la cresta este de Monte Longdon antes de que amanezca.",
+        "en-GB": "Assault and secure the summit and eastern crest of Mount Longdon before dawn."
+      }
+    },
+    "plans": [
+      {
+        "id": "argentina-rock-stronghold",
+        "side": "argentina",
+        "name": {"es-AR":"Fortaleza en los Peñascos", "en-GB":"Crag Stronghold"},
+        "description": {"es-AR":"Maximiza la resistencia en pozos de piedra y sectores de fuego cruzado.", "en-GB":"Maximise resistance in stone sangars and interlocking fields of fire."},
+        "effect": {"es-AR":"+15% moral inicial y +20 municiones", "en-GB":"+15% starting morale and +20 ammunition"},
+        "moraleBonus": 0.15,
+        "ammunitionBonus": 20
+      },
+      {
+        "id": "britain-silent-infiltration",
+        "side": "britain",
+        "name": {"es-AR":"Aproximación Sigilosa", "en-GB":"Stealth Infiltration"},
+        "description": {"es-AR":"Avanza al amparo de la oscuridad para neutralizar puestos de avanzada antes del asalto general.", "en-GB":"Advance under cover of darkness to neutralise outposts prior to main assault."},
+        "effect": {"es-AR":"+10% moral inicial", "en-GB":"+10% starting morale"},
+        "moraleBonus": 0.1,
+        "ammunitionBonus": 10
+      }
+    ]
+  },
+  "narrativeMoments": [
+    {
+      "id": "longdon-opening-fire",
+      "atSecond": 15,
+      "title": {
+        "es-AR": "Contacto en el Puesto de Avanzada",
+        "en-GB": "Outpost Contact"
+      },
+      "body": {
+        "es-AR": "Una mina o disparo delata la aproximación británica en el sector oeste. El Subteniente Baldini y el Cabo 1ro Ríos abren fuego con ametralladoras MAG sobre la pendiente.",
+        "en-GB": "A mine tripwire alerts the western outpost. Sub-Lieutenant Baldini opens defensive machine gun fire down the slope."
+      },
+      "sourceIds": ["official-report-ri7", "3para-war-diary"]
+    },
+    {
+      "id": "longdon-counterattack-castaneda",
+      "atSecond": 80,
+      "title": {
+        "es-AR": "Contraataque de la Sección Castañeda",
+        "en-GB": "Castañeda Platoon Counterattack"
+      },
+      "body": {
+        "es-AR": "La 1ra Sección de la Ca C al mando del Tte 1ro Castañeda contraataca por la ladera norte para aliviar la presión sobre la cumbre.",
+        "en-GB": "Argentine Company C 1st Platoon under 1st Lt Castañeda launches a counter-attack along the northern slope."
+      },
+      "sourceIds": ["castaneda-account-1982"]
+    }
+  ],
+  "historicalOutcome": {
+    "id": "mount-longdon-outcome",
+    "winner": "britain",
+    "summary": {
+      "es-AR": "El 3 PARA capturó Monte Longdon tras un combate de trincheras cuerpo a cuerpo extremadamente costoso.",
+      "en-GB": "3 PARA captured Mount Longdon after an extremely costly close-quarters trench battle."
+    }
+  },
+  "sourceIds": ["official-report-ri7", "3para-war-diary"],
+  "abstractionNote": {
+    "es-AR": "Representación táctica condensada de las posiciones de combate de Monte Longdon.",
+    "en-GB": "Condensed tactical representation of the Mount Longdon combat sectors."
+  }
+}

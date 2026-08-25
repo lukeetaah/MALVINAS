@@ -59,3 +59,4 @@ export interface CounterfactualComparison {
 }
 
 export * from "./catalog";
+export * from "./archive";

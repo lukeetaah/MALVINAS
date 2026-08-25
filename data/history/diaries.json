@@ -188,6 +188,136 @@
         {"sourceId":"RN-MUSEUMS-APRIL","locator":"2–3 April 1982","verified":true}
       ],
       "unlock": {"kind":"date","value":"1982-04-03"}
+    },
+    {
+      "id": "diary-1982-05-28-goose-green-boca",
+      "date": "1982-05-28",
+      "missionId": "goose-green-1982",
+      "side": "argentina",
+      "audience": "argentina",
+      "voice": "soldier",
+      "documentary": true,
+      "title": {
+        "es-AR": "Defensa en Boca House y Darwin Hill",
+        "en-GB": "Defence at Boca House and Darwin Hill"
+      },
+      "body": {
+        "es-AR": "El combate en el istmo de Darwin se concentró sobre los accesos a Boca House y la colina de Darwin. El RI 12 y la sección de reserva opusieron una tenaz resistencia frente al avance del 2 PARA británico.",
+        "en-GB": "Combat across the Darwin isthmus centred on Boca House and Darwin Hill. Argentine 12th Regiment and reserve sections put up stiff resistance against the 2 PARA advance."
+      },
+      "location": {
+        "es-AR": "Istmo de Darwin",
+        "en-GB": "Darwin Isthmus"
+      },
+      "references": [
+        {"sourceId":"ARG-ARMY-DEFENCE","locator":"28 May 1982","verified":true},
+        {"sourceId":"FALKLANDS-NATIONAL-ARCHIVES-1982","locator":"Goose Green Battle","verified":true}
+      ],
+      "unlock": {"kind":"mission-start","value":"goose-green-1982","missionId":"goose-green-1982"}
+    },
+    {
+      "id": "diary-1982-05-28-2para-advance",
+      "date": "1982-05-28",
+      "missionId": "goose-green-1982",
+      "side": "britain",
+      "audience": "britain",
+      "voice": "soldier",
+      "documentary": true,
+      "title": {
+        "es-AR": "El asalto del 2 PARA sobre Pradera del Ganso",
+        "en-GB": "2 PARA Assault on Goose Green"
+      },
+      "body": {
+        "es-AR": "Bajo intenso fuego de armas automáticas y cañones antiaéreos Oerlikon de 35 mm usados en tiro terrestre, las compañías del 2 PARA debieron maniobrar a través de la turbera antes de consolidar el cerco.",
+        "en-GB": "Under heavy small-arms and 35mm anti-aircraft ground fire, 2 PARA companies manoeuvred through open peat bogs before consolidating the perimeter."
+      },
+      "location": {
+        "es-AR": "Pradera del Ganso",
+        "en-GB": "Goose Green"
+      },
+      "references": [
+        {"sourceId":"RN-MUSEUMS-APRIL","locator":"Goose Green 28 May","verified":true},
+        {"sourceId":"FALKLANDS-NATIONAL-ARCHIVES-1982","locator":"28 May 1982","verified":true}
+      ],
+      "unlock": {"kind":"mission-end","value":"goose-green-1982","missionId":"goose-green-1982"}
+    },
+    {
+      "id": "diary-1982-05-21-san-carlos-bomb-alley",
+      "date": "1982-05-21",
+      "missionId": "san-carlos-1982",
+      "side": "argentina",
+      "audience": "argentina",
+      "voice": "aircrew",
+      "documentary": true,
+      "title": {
+        "es-AR": "Vuelo rasante en el Callejón de las Bombas",
+        "en-GB": "Low-Level Run in Bomb Alley"
+      },
+      "body": {
+        "es-AR": "Escuadrillas de A-4B Skyhawk y Dagger M-5 de la FAA entraron a ras del agua en el estrecho esquivando radares y desafiando el fuego antiaéreo concentrado y los misiles de las fragatas británicas.",
+        "en-GB": "Argentine Air Force Skyhawks and Daggers swept at sea level through the sound, evading radar and braving heavy anti-aircraft and missile fire from British frigates."
+      },
+      "location": {
+        "es-AR": "Brazo San Carlos",
+        "en-GB": "San Carlos Water"
+      },
+      "references": [
+        {"sourceId":"ARG-FAA-ARCHIVE","locator":"San Carlos operations 21 May","verified":true},
+        {"sourceId":"ARG-FAA-TIMELINE","locator":"21 May 1982","verified":true}
+      ],
+      "unlock": {"kind":"mission-start","value":"san-carlos-1982","missionId":"san-carlos-1982"}
+    },
+    {
+      "id": "diary-1982-06-11-mount-longdon",
+      "date": "1982-06-11",
+      "missionId": "mount-longdon-1982",
+      "side": "argentina",
+      "audience": "argentina",
+      "voice": "soldier",
+      "documentary": true,
+      "title": {
+        "es-AR": "La noche de los peñascos en Monte Longdon",
+        "en-GB": "The Night among Longdon Crags"
+      },
+      "body": {
+        "es-AR": "En la oscuridad y bajo temperaturas bajo cero, la 1ra Sección de la Compañía B del RI 7 al mando del Subteniente Juan Baldini trabó combate cuerpo a cuerpo entre los peñascos de piedra frente al asalto del 3 PARA.",
+        "en-GB": "In darkness and sub-zero temperatures, the 1st Platoon of B Company (7th Infantry Regiment) under Sub-Lt Baldini engaged in hand-to-hand combat among rocky crags against 3 PARA."
+      },
+      "location": {
+        "es-AR": "Monte Longdon (Cresta Oeste)",
+        "en-GB": "Mount Longdon (Western Crest)"
+      },
+      "references": [
+        {"sourceId":"ARG-LAST-BATTLES","locator":"Mount Longdon section","verified":true},
+        {"sourceId":"ARG-ARMY-DEFENCE","locator":"11-12 June battles","verified":true}
+      ],
+      "unlock": {"kind":"mission-start","value":"mount-longdon-1982","missionId":"mount-longdon-1982"}
+    },
+    {
+      "id": "diary-1982-06-12-3para-longdon-ridge",
+      "date": "1982-06-12",
+      "missionId": "mount-longdon-1982",
+      "side": "britain",
+      "audience": "britain",
+      "voice": "soldier",
+      "documentary": true,
+      "title": {
+        "es-AR": "La cresta de Monte Longdon asegurada",
+        "en-GB": "Securing the Longdon Ridge"
+      },
+      "body": {
+        "es-AR": "El combate por Monte Longdon se extendió por más de diez horas a través de trincheras excavadas en la roca, requiriendo el empleo masivo de misiles MILAN y morteros para neutralizar las posiciones fortificadas.",
+        "en-GB": "The battle for Mount Longdon raged for over ten hours through trenches dug into stone, requiring heavy use of MILAN missiles and mortars to overcome fortified positions."
+      },
+      "location": {
+        "es-AR": "Cumbre de Monte Longdon",
+        "en-GB": "Mount Longdon Summit"
+      },
+      "references": [
+        {"sourceId":"RN-MUSEUMS-APRIL","locator":"12 June Longdon","verified":true},
+        {"sourceId":"ARG-LAST-BATTLES","locator":"Longdon resolution","verified":true}
+      ],
+      "unlock": {"kind":"mission-end","value":"mount-longdon-1982","missionId":"mount-longdon-1982"}
     }
   ]
 }

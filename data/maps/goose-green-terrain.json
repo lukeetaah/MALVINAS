@@ -1,0 +1,89 @@
+{
+  "id": "goose-green-terrain-v1",
+  "name": {
+    "es-AR": "Istmo de Darwin — Pradera del Ganso (Topografía 1982)",
+    "en-GB": "Darwin Isthmus — Goose Green (1982 Topography)"
+  },
+  "width": 100,
+  "height": 60,
+  "cellResolution": 25,
+  "elevationScale": "meters",
+  "zones": [
+    {
+      "name": "West Coast / Bahía Brenton",
+      "type": "water",
+      "elevation": 0,
+      "bounds": { "xMin": 0, "xMax": 8, "yMin": 0, "yMax": 60 }
+    },
+    {
+      "name": "Peat Bogs Lowlands",
+      "type": "peat-bog",
+      "elevation": 6,
+      "center": { "x": 60, "y": 35 },
+      "radius": 12
+    },
+    {
+      "name": "Darwin Hill Ridge",
+      "type": "rocky-ridge",
+      "elevation": 48,
+      "center": { "x": 36, "y": 24 },
+      "radius": 6
+    },
+    {
+      "name": "Coronation Hill",
+      "type": "rocky-ridge",
+      "elevation": 42,
+      "center": { "x": 26, "y": 20 },
+      "radius": 5
+    },
+    {
+      "name": "Boca House Ridge",
+      "type": "rocky-ridge",
+      "elevation": 28,
+      "center": { "x": 42, "y": 30 },
+      "radius": 5
+    },
+    {
+      "name": "North-South Road",
+      "type": "road",
+      "elevation": 12,
+      "waypoints": [
+        { "x": 24, "y": 10 },
+        { "x": 24, "y": 25 },
+        { "x": 23, "y": 45 }
+      ]
+    },
+    {
+      "name": "East-West Approach Track",
+      "type": "road",
+      "elevation": 14,
+      "waypoints": [
+        { "x": 95, "y": 30 },
+        { "x": 60, "y": 31 },
+        { "x": 42, "y": 30 },
+        { "x": 23, "y": 42 }
+      ]
+    },
+    {
+      "name": "Darwin Airfield Runway",
+      "type": "airstrip",
+      "elevation": 14,
+      "center": { "x": 18, "y": 18 },
+      "size": { "width": 14, "height": 3 }
+    },
+    {
+      "name": "Darwin Settlement",
+      "type": "settlement",
+      "elevation": 15,
+      "center": { "x": 24, "y": 16 },
+      "radius": 4
+    },
+    {
+      "name": "Goose Green Settlement",
+      "type": "settlement",
+      "elevation": 12,
+      "center": { "x": 23, "y": 42 },
+      "radius": 8
+    }
+  ]
+}

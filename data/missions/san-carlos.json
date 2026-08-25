@@ -1,0 +1,109 @@
+{
+  "id": "san-carlos-1982",
+  "title": {
+    "es-AR": "San Carlos — El Desembarco y Bomb Alley",
+    "en-GB": "San Carlos — The Landing and Bomb Alley"
+  },
+  "dateStart": "1982-05-21",
+  "dateEnd": "1982-05-25",
+  "tickRate": 10,
+  "timeLimitSeconds": 240,
+  "map": {
+    "width": 100,
+    "height": 60,
+    "features": [
+      {"id":"san-carlos-beachhead","kind":"position","position":{"x":45,"y":28},"radius":7,"cover":0.15},
+      {"id":"fanning-head-heights","kind":"position","position":{"x":25,"y":18},"radius":6,"cover":0.4},
+      {"id":"san-carlos-settlement","kind":"settlement","position":{"x":58,"y":38},"radius":6,"cover":0.35},
+      {"id":"anchorage-waters","kind":"open-ground","position":{"x":35,"y":42},"radius":8,"cover":0.0}
+    ]
+  },
+  "initialUnits": [
+    {"id":"ec-guemes-esteban","side":"argentina","kind":"infantry","label":"EC Güemes · Tte 1ro Esteban","position":{"x":26,"y":20},"health":100,"morale":0.85,"ammunition":70,"fuel":1,"speed":4.2,"attackRange":8,"damage":11,"entrenched":true},
+    {"id":"ec-guemes-support","side":"argentina","kind":"support-weapon","label":"EC Güemes · Cañones Czekalski 105 mm","position":{"x":24,"y":16},"health":100,"morale":0.82,"ammunition":50,"fuel":1,"speed":2.4,"attackRange":14,"damage":18,"entrenched":true},
+    {"id":"faa-skyhawk-flight","side":"argentina","kind":"aircraft","label":"FAA · Escuadrilla A-4B Skyhawk","position":{"x":10,"y":50},"health":100,"morale":0.90,"ammunition":30,"fuel":100,"speed":8.0,"attackRange":12,"damage":32},
+    {"id":"faa-dagger-flight","side":"argentina","kind":"aircraft","label":"FAA · Escuadrilla Dagger M-5","position":{"x":15,"y":54},"health":100,"morale":0.90,"ammunition":30,"fuel":100,"speed":8.5,"attackRange":10,"damage":30},
+    {"id":"hms-ardent","side":"britain","kind":"ship","label":"HMS Ardent (F184)","position":{"x":42,"y":36},"health":100,"morale":0.90,"ammunition":60,"fuel":100,"speed":3.0,"attackRange":18,"damage":24},
+    {"id":"hms-antelope","side":"britain","kind":"ship","label":"HMS Antelope (F170)","position":{"x":50,"y":32},"health":100,"morale":0.90,"ammunition":60,"fuel":100,"speed":3.0,"attackRange":18,"damage":24},
+    {"id":"40-commando-rm","side":"britain","kind":"infantry","label":"40 Commando Royal Marines","position":{"x":46,"y":26},"health":100,"morale":0.92,"ammunition":85,"fuel":1,"speed":4.5,"attackRange":8,"damage":12},
+    {"id":"rapier-sam-battery","side":"britain","kind":"support-weapon","label":"Batería Antiaérea Rapier SAM","position":{"x":52,"y":25},"health":100,"morale":0.85,"ammunition":40,"fuel":1,"speed":2.0,"attackRange":16,"damage":22}
+  ],
+  "objectives": [
+    {"id":"argentina-hold-fanning","side":"argentina","kind":"hold","featureId":"fanning-head-heights"},
+    {"id":"argentina-contest-beachhead","side":"argentina","kind":"capture","featureId":"san-carlos-beachhead"},
+    {"id":"britain-secure-beachhead","side":"britain","kind":"capture","featureId":"san-carlos-beachhead"},
+    {"id":"britain-capture-settlement","side":"britain","kind":"capture","featureId":"san-carlos-settlement"}
+  ],
+  "briefing": {
+    "theatre": {
+      "es-AR": "Estrecho de San Carlos · Brazo San Carlos · Isla Soledad",
+      "en-GB": "Falkland Sound · San Carlos Water · East Falkland"
+    },
+    "situation": {
+      "es-AR": "El 21 de mayo de 1982, las fuerzas británicas iniciaron el desembarco anfibio en el Brazo San Carlos (Operación Sutton). La Fuerza Aérea y la Aviación Naval argentina lanzaron sucesivas oleadas rasantes de ataque naval sobre las fragatas en el canal, convirtiéndolo en el 'Callejón de las Bombas' (Bomb Alley).",
+      "en-GB": "On 21 May 1982, British forces began amphibious landings in San Carlos Water (Operation Sutton). Argentine Air Force and Naval aviation launched low-level air strikes on British warships in the sound, turning it into 'Bomb Alley'."
+    },
+    "historicalFrame": {
+      "es-AR": "Las tropas británicas consolidaron la cabeza de playa a pesar de la pérdida y avería de múltiples buques de guerra ante las incursiones aéreas rasantes.",
+      "en-GB": "British landing forces secured the beachhead despite severe naval losses and damage from low-level air incursions."
+    },
+    "playerObjective": {
+      "argentina": {
+        "es-AR": "Desarticulá la cabeza de playa e infligí daño crítico sobre las fragatas británicas de escolta.",
+        "en-GB": "Disrupt the beachhead and inflict critical damage on British escort frigates."
+      },
+      "britain": {
+        "es-AR": "Asegurá la cabeza de playa de San Carlos y defendé el fondeadero con baterías antiaéreas.",
+        "en-GB": "Secure San Carlos beachhead and protect the anchorage using air defence batteries."
+      }
+    },
+    "plans": [
+      {
+        "id": "argentina-low-level-strike",
+        "side": "argentina",
+        "name": {"es-AR":"Vuelo Rasante al Límite", "en-GB":"Low-Level Strike Run"},
+        "description": {"es-AR":"Incursión rasante sobre el canal esquivando los radares de las fragatas.", "en-GB":"Sea-skimming run along the sound evading frigate radar."},
+        "effect": {"es-AR":"+15% daño aéreo y +10% moral", "en-GB":"+15% air damage and +10% morale"},
+        "moraleBonus": 0.1,
+        "ammunitionBonus": 15
+      },
+      {
+        "id": "britain-air-defense-umbrella",
+        "side": "britain",
+        "name": {"es-AR":"Paraguas Antiaéreo Rapier", "en-GB":"Rapier Air Defence Umbrella"},
+        "description": {"es-AR":"Despliegue rápido de baterías SAM y defensa de punto en las colinas.", "en-GB":"Rapid deployment of SAM batteries and point defence on surrounding hills."},
+        "effect": {"es-AR":"+20% alcance antiaéreo", "en-GB":"+20% air defence range"},
+        "moraleBonus": 0.1,
+        "ammunitionBonus": 10
+      }
+    ]
+  },
+  "narrativeMoments": [
+    {
+      "id": "san-carlos-first-incursion",
+      "atSecond": 20,
+      "title": {
+        "es-AR": "Primera Incursión sobre el Brazo San Carlos",
+        "en-GB": "First Air Strike on San Carlos Water"
+      },
+      "body": {
+        "es-AR": "Escuadrillas de A-4B Skyhawk y Dagger ingresan a baja cota sobre el estrecho desafiando el fuego antiaéreo naval concentrado.",
+        "en-GB": "A-4B Skyhawk and Dagger flights sweep low through the sound under intense naval anti-aircraft fire."
+      },
+      "sourceIds": ["official-report-faa", "royal-navy-action-report"]
+    }
+  ],
+  "historicalOutcome": {
+    "id": "san-carlos-outcome",
+    "winner": "britain",
+    "summary": {
+      "es-AR": "La cabeza de playa fue asegurada por los británicos permitiendo el desembarco de la 3 Brigada de Comandos a pesar del severo desgaste naval.",
+      "en-GB": "The beachhead was secured by British forces enabling 3 Commando Brigade to land despite severe naval attrition."
+    }
+  },
+  "sourceIds": ["official-report-faa", "royal-navy-action-report"],
+  "abstractionNote": {
+    "es-AR": "Representación aeronaval táctica del desembarco en San Carlos.",
+    "en-GB": "Tactical air-naval representation of the San Carlos landing."
+  }
+}
